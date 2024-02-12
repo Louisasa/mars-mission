@@ -25,7 +25,8 @@
     "build": "react-scripts build",
     "test": "jest",
     "format": "npx prettier . --write",
-    "prepare": "husky"
+    "prepare": "husky",
+    "prettier:check:ci": "prettier --check \"**/*.{ts,tsx,js,md,mdx,css,yaml}\""
   },
   "eslintConfig": {
     "extends": [
