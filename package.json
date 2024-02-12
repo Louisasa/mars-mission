@@ -23,8 +23,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "test": "jest"
+    "test": "jest",
+    "format": "npx prettier . --write",
+    "prepare": "husky"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +46,12 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-modules-commonjs": "^7.23.3"
+    "@babel/plugin-transform-modules-commonjs": "^7.23.3",
+    "husky": "^9.0.10",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }
