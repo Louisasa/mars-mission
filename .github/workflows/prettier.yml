@@ -13,8 +13,10 @@ jobs:
       matrix:
         node-version: [18]
     steps:
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
+      - name: git-checkout
+        uses: actions/checkout@v3
+      - name: pnpm-setup
+        uses: pnpm/action-setup@v2
         with:
           version: 8
       - name: Use Node.js ${{ matrix.node-version }}
