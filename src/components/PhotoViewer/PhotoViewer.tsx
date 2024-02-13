@@ -1,14 +1,17 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
+interface Photo {
+  id: number;
+  img_src: string;
+}
+
 interface RoverData {
-  photos: {
-    img_src: string;
-  }[];
+  photos: Photo[];
 }
 
 const PhotoViewer: React.FC = () => {
-  const [roverData, setRoverData] = useState<RoverData>();
+  const [roverData, setRoverData] = useState<RoverData | undefined>(undefined);
   const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?api_key=${process.env.REACT_APP_API_KEY}&earth_date=2008-10-16`;
 
   useEffect(() => {
@@ -21,7 +24,13 @@ const PhotoViewer: React.FC = () => {
     return <h1>Waiting for data</h1>;
   }
 
-  return <img src={roverData.photos[0].img_src} />;
+  return (
+    <div>
+      {roverData.photos.map((photo: Photo) => (
+        <img key={photo.id} src={photo.img_src} alt="" />
+      ))}
+    </div>
+  );
 };
 
 export default PhotoViewer;
