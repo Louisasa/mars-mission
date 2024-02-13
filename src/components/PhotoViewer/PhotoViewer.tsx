@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 interface Photo {
   id: number;
   img_src: string;
+  earth_date: string;
 }
 
 interface RoverData {
@@ -17,6 +18,7 @@ const PhotoViewer: React.FC = () => {
   const [coverImageUrl, setCoverImageUrl] = useState<string>(
     "https://picsum.photos/id/1084/1000/800",
   );
+  const [date, setDate] = useState<string>();
   const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&sol=100`;
 
   useEffect(() => {
@@ -29,8 +31,9 @@ const PhotoViewer: React.FC = () => {
     setSelectedRover(roverName);
   };
 
-  const handleImageClick = (url: string) => {
+  const handleImageClick = (url: string, date: string) => {
     setCoverImageUrl(url);
+    setDate(date);
   };
 
   if (!roverData) {
@@ -53,12 +56,13 @@ const PhotoViewer: React.FC = () => {
           alt="placeholder image"
           className="coverImage"
         />
+        {date && <p>This image was captured on {date}</p>}
       </div>
 
       <div className="thumbnails">
         {roverData.photos.map((photo: Photo) => (
           <img
-            onClick={() => handleImageClick(photo.img_src)}
+            onClick={() => handleImageClick(photo.img_src, photo.earth_date)}
             key={photo.id}
             src={photo.img_src}
             alt=""
