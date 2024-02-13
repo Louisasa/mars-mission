@@ -1,0 +1,20 @@
+@mixin padding($size: 1) {
+  padding: calc($size * 4) px;
+}
+
+@mixin margin($size: 1) {
+  margin: calc($size * 4) px;
+}
+
+@mixin text($textSize) {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: map-get(
+    (
+      paragraph: 14px,
+      heading: 24px,
+      subheading: 20px,
+    ),
+    $textSize
+  );
+}
