@@ -1,1 +1,98 @@
 @import "../commonStyles/constants.scss";
+
+//Constants
+$z-fixed: 100;
+$header-height: 3.5rem;
+$title-color: hsl(0, 0%, 95%);
+$font-semi-bold: 600;
+$first-color: hsl(28, 88%, 62%);
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  z-index: $z-fixed;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: $header-height;
+  margin: 1rem;
+}
+
+.nav__toggle,
+.nav__close {
+  font-size: 1.5rem;
+  color: $title-color;
+  cursor: pointer;
+}
+
+//    .nav__cta {
+//     background-color: $first-color;
+//     color: $title-color;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     transition: background-color 0.3s ease;
+//     padding: 0.75rem 1.5rem;
+//    }
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5rem;
+}
+
+.nav__link {
+  color: $title-color;
+  font-weight: $font-semi-bold;
+  transition: color 0.4s;
+}
+
+.nav__link:hover {
+  color: $first-color;
+}
+
+.nav__close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+
+.show-menu {
+  right: 0;
+}
+
+@media (max-width: 1150px) {
+  .nav__menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: hsla(0, 0%, 6%, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 80%;
+    height: 100%;
+    padding: 6rem 3rem 0;
+    transition: right 0.4s;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .nav {
+    height: calc($header-height + 1rem);
+  }
+  .nav__toggle,
+  .nav__close {
+    display: none;
+  }
+
+  .nav__list {
+    flex-direction: row;
+    column-gap: 2.5rem;
+  }
+}
