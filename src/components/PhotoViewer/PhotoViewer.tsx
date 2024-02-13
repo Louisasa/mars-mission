@@ -14,6 +14,9 @@ interface RoverData {
 const PhotoViewer: React.FC = () => {
   const [roverData, setRoverData] = useState<RoverData | undefined>(undefined);
   const [selectedRover, setSelectedRover] = useState<string>("spirit");
+  const [coverImageUrl, setCoverImageUrl] = useState<string>(
+    "https://picsum.photos/id/1084/1000/800",
+  );
   const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&sol=100`;
 
   useEffect(() => {
@@ -24,6 +27,10 @@ const PhotoViewer: React.FC = () => {
 
   const handleClick = (roverName: string) => {
     setSelectedRover(roverName);
+  };
+
+  const handleImageClick = (url: string) => {
+    setCoverImageUrl(url);
   };
 
   if (!roverData) {
@@ -42,7 +49,7 @@ const PhotoViewer: React.FC = () => {
       <p>You've selected {selectedRover} rover</p>
       <div>
         <img
-          src="https://picsum.photos/id/1084/1000/800"
+          src={coverImageUrl}
           alt="placeholder image"
           className="coverImage"
         />
@@ -50,7 +57,12 @@ const PhotoViewer: React.FC = () => {
 
       <div className="thumbnails">
         {roverData.photos.map((photo: Photo) => (
-          <img key={photo.id} src={photo.img_src} alt="" />
+          <img
+            onClick={() => handleImageClick(photo.img_src)}
+            key={photo.id}
+            src={photo.img_src}
+            alt=""
+          />
         ))}
       </div>
     </div>
