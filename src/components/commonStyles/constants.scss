@@ -1,3 +1,6 @@
+$desktopMinWidth: 992px;
+$tabletMinWidth: 600px;
+
 @mixin padding($size: 1) {
   padding: calc($size * 4) px;
 }
@@ -17,4 +20,16 @@
     ),
     $textSize
   );
+}
+
+@mixin desktop {
+  @media (min-width: $desktopMinWidth) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tabletMinWidth) {
+    @content;
+  }
 }
