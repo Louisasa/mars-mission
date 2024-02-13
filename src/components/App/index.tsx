@@ -1,19 +1,16 @@
 import React from "react";
-import "./styles.css";
-import FunFacts from "../FunFacts/FunFact";
-import { factList } from "../FunFacts/factList";
+import "./styles.scss";
+import LandingPage from "../Layouts/LandingPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App: React.FC = () => {
   // const facts: [] = factList;
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Fun Facts
-          <FunFacts facts={factList} />
-        </p>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
+    </Router>
   );
 };
 
