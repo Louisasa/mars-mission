@@ -62,6 +62,7 @@ const PhotoViewer: React.FC = () => {
             key={photo.id}
             src={photo.img_src}
             alt=""
+            className={photo.img_src === coverImageUrl ? "border" : ""}
           />
         ))}
       </div>
