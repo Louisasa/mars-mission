@@ -13,13 +13,18 @@ interface RoverData {
 
 const PhotoViewer: React.FC = () => {
   const [roverData, setRoverData] = useState<RoverData | undefined>(undefined);
-  const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?api_key=${process.env.REACT_APP_API_KEY}&sol=100`;
+  const [selectedRover, setSelectedRover] = useState<string>("spirit");
+  const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&sol=100`;
 
   useEffect(() => {
     fetch(URL)
       .then((response) => response.json())
       .then((data) => setRoverData(data));
-  }, []);
+  }, [selectedRover]);
+
+  const handleClick = (roverName: string) => {
+    setSelectedRover(roverName);
+  };
 
   if (!roverData) {
     return <h1>Waiting for data</h1>;
@@ -30,11 +35,11 @@ const PhotoViewer: React.FC = () => {
       <h1>Mars Rover Photo Viewer</h1>
       <h2>Please select your Rover</h2>
       <div className="buttonContainer">
-        <button>Curiosity</button>
-        <button>Opportunity</button>
-        <button>Spirit</button>
+        <button onClick={() => handleClick("curiosity")}>Curiosity</button>
+        <button onClick={() => handleClick("opportunity")}>Opportunity</button>
+        <button onClick={() => handleClick("spirit")}>Spirit</button>
       </div>
-      <p>You've selected ... rover</p>
+      <p>You've selected {selectedRover} rover</p>
       <div>
         <img
           src="https://picsum.photos/id/1084/1000/800"
