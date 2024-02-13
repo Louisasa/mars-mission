@@ -1,10 +1,17 @@
+import React from "react";
 import { factList } from "./factList";
 
-export default function FunFacts() {
+// const facts = factList;
+export default function FunFacts(props: any) {
   return (
     <div>
       <p>factList</p>
-      <img src="https://picsum.photos/id/600/1600/900.jpg"></img>
+      <div className="card-container">
+        <div className="fact-container">
+          <img src={props.facts[1].image} alt="fact image" />
+          <p className="content">{props.facts[1].content} </p>
+        </div>
+      </div>
     </div>
   );
 }

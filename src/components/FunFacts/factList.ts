@@ -1,3 +1,5 @@
+import image1 from "../../assests/SolarSystem.jpg";
+
 interface Fact {
   title: string;
   image?: string;
@@ -18,7 +20,7 @@ export const factList: Fact[] = [
   },
   {
     title: "Days and years",
-    image: "http://something.com ",
+    image: image1,
     id: 5,
     content:
       "A day in Mars, called a sol, is 24h 39 min. A year, defined as the time taken to orbit around the sun, is 687 earth days or 669 sols",
