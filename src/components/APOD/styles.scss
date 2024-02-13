@@ -1,0 +1,51 @@
+@import "../commonStyles/constants.scss";
+
+.apod {
+  // border: 0.2rem solid orange;
+  position: relative;
+  display: flex;
+  width: 50%;
+}
+
+.image_wrapper img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  /* center overlay text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  @include padding;
+  @include margin;
+  @include text("heading");
+  top: 0;
+}
+
+.explanation {
+  @include padding;
+  @include text("paragraph");
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(8px) brightness(80%);
+}
+
+.image_wrapper:hover .explanation {
+  transform: scale(1);
+}
+
+.explanation .text-container {
+  border: 0.2rem solid orange;
+  @include margin(10);
+}
