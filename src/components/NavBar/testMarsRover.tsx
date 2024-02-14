@@ -1,5 +1,5 @@
 import React from "react";
-import "./navBar.scss";
+import "./styles.scss";
 
 const MarsRover: React.FC = () => {
   return (
