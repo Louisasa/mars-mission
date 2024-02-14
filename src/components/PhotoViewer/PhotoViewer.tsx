@@ -13,9 +13,9 @@ interface RoverData {
 }
 
 const PhotoViewer: React.FC = () => {
-  const [roverData, setRoverData] = useState<RoverData | undefined>(undefined);
+  const [roverData, setRoverData] = useState<RoverData>();
   const [selectedRover, setSelectedRover] = useState<string>("spirit");
-  const [coverImageUrl, setCoverImageUrl] = useState<string>();
+  const [coverImageUrl, setCoverImageUrl] = useState<string>("");
   const [date, setDate] = useState<string>();
   const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&sol=100`;
 
@@ -25,7 +25,10 @@ const PhotoViewer: React.FC = () => {
   useEffect(() => {
     fetch(URL)
       .then((response) => response.json())
-      .then((data) => setRoverData(data));
+      .then((data) => {
+        setRoverData(data);
+        setCoverImageUrl(data.photos[0].img_src);
+      });
   }, [selectedRover]);
 
   const handleClick = (roverName: string) => {
@@ -50,14 +53,9 @@ const PhotoViewer: React.FC = () => {
         <button onClick={() => handleClick("spirit")}>Spirit</button>
         <button onClick={() => handleClick("opportunity")}>Opportunity</button>
       </div>
-
       <p>You've selected {roverNameCapitals} rover</p>
       <div className="coverImageContainer">
-        <img
-          src={coverImageUrl}
-          alt="mars rover image"
-          className="coverImage"
-        />
+        <img src={coverImageUrl} alt="mars rover" className="coverImage" />
       </div>
       {date && <p>This image was captured on {date}</p>}
       <div className="thumbnails">
@@ -66,7 +64,7 @@ const PhotoViewer: React.FC = () => {
             onClick={() => handleImageClick(photo.img_src, photo.earth_date)}
             key={photo.id}
             src={photo.img_src}
-            alt="rover photo"
+            alt="mars rover"
             className={photo.img_src === coverImageUrl ? "border" : ""}
           />
         ))}
