@@ -2,6 +2,16 @@ $widthMobile: 430px;
 $fontSizeBoby: 16px;
 $fontBold: 600;
 
+.gridContainer {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  padding: 10px;
+}
+.gridItem {
+  width: 100%;
+}
+
 body {
   background-color: #252a38;
   color: #dcdcdc;
@@ -24,10 +34,14 @@ body {
         margin-left: 1rem;
         margin-bottom: 1rem;
         text-align: left;
-        font-weight: $fontBold;
+        // font-weight: $fontBold;
         color: whitesmoke;
       }
-
+      .title {
+        font-weight: $fontBold;
+        font-size: larger;
+        margin-left: 1rem;
+      }
       .text-container {
         margin-left: 0.5rem;
         text-align: left;
