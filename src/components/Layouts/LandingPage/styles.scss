@@ -1,0 +1,10 @@
+@import "../../commonStyles/constants.scss";
+
+.landing-page {
+}
+
+.test {
+  @include text("paragraph");
+  display: flex;
+  justify-content: center;
+}
