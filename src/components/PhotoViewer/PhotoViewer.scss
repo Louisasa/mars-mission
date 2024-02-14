@@ -1,29 +1,61 @@
 @import "../commonStyles/constants.scss";
 
+$background-color: #0c134f;
+
+body {
+  background-color: $background-color;
+}
+
+h1 {
+  @include text(heading);
+}
+
+h2 {
+  @include text(subheading);
+}
+
+p {
+  @include text(paragraph);
+}
+
+button {
+  background-color: #d21312;
+  @include text(subheading);
+  border: none;
+  border-radius: 5%;
+  padding: 20px;
+  flex: 30%;
+}
+
+button:hover {
+  background-color: #f15a59;
+}
 .mainContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-left: 5%;
-  margin-right: 5%;
+  @include margin(10);
+}
+
+.coverImageContainer {
+  display: flex;
+  justify-content: center;
 }
 .coverImage {
-  width: 90%;
-  height: auto;
-  display: flex;
-  align-items: center;
+  width: auto;
+  height: 75vh;
   margin-bottom: 10px;
 }
 
 .thumbnails {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  justify-content: space-between;
+  row-gap: 10px;
 }
 
 .thumbnails img {
-  flex: 20%;
-  width: 20%;
+  width: 21%;
 }
 
 .buttonContainer {

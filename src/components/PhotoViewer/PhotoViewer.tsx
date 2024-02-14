@@ -15,11 +15,12 @@ interface RoverData {
 const PhotoViewer: React.FC = () => {
   const [roverData, setRoverData] = useState<RoverData | undefined>(undefined);
   const [selectedRover, setSelectedRover] = useState<string>("spirit");
-  const [coverImageUrl, setCoverImageUrl] = useState<string>(
-    "https://picsum.photos/id/1084/1000/800",
-  );
+  const [coverImageUrl, setCoverImageUrl] = useState<string>();
   const [date, setDate] = useState<string>();
   const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&sol=100`;
+
+  var roverNameCapitals =
+    selectedRover.charAt(0).toUpperCase() + selectedRover.substring(1);
 
   useEffect(() => {
     fetch(URL)
@@ -43,29 +44,29 @@ const PhotoViewer: React.FC = () => {
   return (
     <div className="mainContainer">
       <h1>Mars Rover Photo Viewer</h1>
-      <h2>Please select your Rover</h2>
+      <h2>Please select your rover</h2>
       <div className="buttonContainer">
         <button onClick={() => handleClick("curiosity")}>Curiosity</button>
-        <button onClick={() => handleClick("opportunity")}>Opportunity</button>
         <button onClick={() => handleClick("spirit")}>Spirit</button>
-      </div>
-      <p>You've selected {selectedRover} rover</p>
-      <div>
-        <img
-          src={coverImageUrl}
-          alt="placeholder image"
-          className="coverImage"
-        />
-        {date && <p>This image was captured on {date}</p>}
+        <button onClick={() => handleClick("opportunity")}>Opportunity</button>
       </div>
 
+      <p>You've selected {roverNameCapitals} rover</p>
+      <div className="coverImageContainer">
+        <img
+          src={coverImageUrl}
+          alt="mars rover image"
+          className="coverImage"
+        />
+      </div>
+      {date && <p>This image was captured on {date}</p>}
       <div className="thumbnails">
-        {roverData.photos.map((photo: Photo) => (
+        {roverData.photos.slice(0, 23).map((photo: Photo) => (
           <img
             onClick={() => handleImageClick(photo.img_src, photo.earth_date)}
             key={photo.id}
             src={photo.img_src}
-            alt=""
+            alt="rover photo"
             className={photo.img_src === coverImageUrl ? "border" : ""}
           />
         ))}

@@ -2,11 +2,11 @@ $desktopMinWidth: 992px;
 $tabletMinWidth: 600px;
 
 @mixin padding($size: 1) {
-  padding: calc($size * 4) px;
+  padding: calc($size * 4px);
 }
 
 @mixin margin($size: 1) {
-  margin: calc($size * 4) px;
+  margin: calc($size * 4px);
 }
 
 @mixin text($textSize) {
