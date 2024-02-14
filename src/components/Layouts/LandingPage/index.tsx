@@ -6,6 +6,7 @@ import FunFactCategory from "../../FunFacts/FunFactCategory";
 import { factList } from "../../FunFacts/factList";
 import { Link } from "react-router-dom";
 import Quiz from "../../Quiz";
+import { APOD } from "../../APOD/apod";
 
 const LandingPage: React.FC = () => {
   useEffect(() => {

@@ -1,10 +1,8 @@
 @import "../commonStyles/constants.scss";
 
 .apod {
-  // border: 0.2rem solid orange;
   position: relative;
   display: flex;
-  width: 50%;
 }
 
 .image_wrapper img {
@@ -27,10 +25,11 @@
   @include margin;
   @include text("heading");
   top: 0;
+  font-family: cursive;
 }
 
 .explanation {
-  @include padding;
+  @include padding(2);
   @include text("paragraph");
   flex-direction: column;
   justify-content: center;
@@ -46,6 +45,25 @@
 }
 
 .explanation .text-container {
-  border: 0.2rem solid orange;
   @include margin(10);
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #c4d46f; /* Light grey */
+  border-top: 10px solid #383636; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+@media screen and (min-width: $tabletMinWidth) {
 }
