@@ -4,25 +4,28 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
+  background-image: url("../../../assets/backgroundimage1.jpeg");
+  z-index: -2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 
   @include tablet {
     flex-direction: row;
   }
 }
 
-.three-column-section-background-image {
-  z-index: -2;
-  position: absolute;
-  width: 100%;
-}
-
 .column-section {
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
   @include tablet {
     width: 30%;
   }
 }
 
 .section-1 {
+  background-image: url("../../../assets/backgroundimage2.jpeg");
   order: 2;
 
   @include tablet {
@@ -31,6 +34,7 @@
 }
 
 .section-2 {
+  background-image: url("../../../assets/backgroundimage2.jpeg");
   order: 1;
 
   @include tablet {
@@ -39,11 +43,6 @@
 }
 
 .section-3 {
+  background-image: url("../../../assets/backgroundimage2.jpeg");
   order: 3;
-}
-
-.section-background-image {
-  z-index: -1;
-  position: absolute;
-  width: 100%;
 }

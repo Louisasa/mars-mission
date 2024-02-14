@@ -67,6 +67,9 @@ devDependencies:
   husky:
     specifier: ^9.0.10
     version: 9.0.10
+  jest-mock-fetch:
+    specifier: ^2.0.5
+    version: 2.0.5
   lint-staged:
     specifier: ^15.2.2
     version: 15.2.2
@@ -9701,6 +9704,22 @@ packages:
       slash: 3.0.0
       stack-utils: 2.0.6
     dev: false
+
+  /jest-mock-fetch@2.0.5:
+    resolution:
+      {
+        integrity: sha512-SqjzvjLgehVvrhweq9r2pLxlz3ZwPC2p14yTZFxy+bejE+jDgpV+0aw/oysP088wlFbzEl3TRy0gWIYY25vVEA==,
+      }
+    dependencies:
+      jest-mock-promise: 2.0.2
+    dev: true
+
+  /jest-mock-promise@2.0.2:
+    resolution:
+      {
+        integrity: sha512-JD5zcuoagmSJ+Gb05iD8o+Ze/viWLzI7QnrVY3Q8FyDVGUH5aXxZON+u7S9ouAt59sLNR97dSMWGezfTkkb5hg==,
+      }
+    dev: true
 
   /jest-mock@27.5.1:
     resolution:

@@ -2,11 +2,11 @@ $desktopMinWidth: 992px;
 $tabletMinWidth: 600px;
 
 @mixin padding($size: 1) {
-  padding: calc($size * 4) px;
+  padding: calc($size * 4px);
 }
 
 @mixin margin($size: 1) {
-  margin: calc($size * 4) px;
+  margin: calc($size * 4px);
 }
 
 @mixin text($textSize) {
@@ -17,9 +17,16 @@ $tabletMinWidth: 600px;
       paragraph: 14px,
       heading: 24px,
       subheading: 20px,
+      title: 48px,
     ),
     $textSize
   );
+}
+
+@mixin tablet {
+  @media (min-width: $tabletMinWidth) {
+    @content;
+  }
 }
 
 @mixin desktop {
@@ -28,8 +35,22 @@ $tabletMinWidth: 600px;
   }
 }
 
-@mixin tablet {
-  @media (min-width: $tabletMinWidth) {
-    @content;
+.gutter {
+  background-color: rgb(43, 51, 75);
+  z-index: -3;
+  position: relative;
+  height: 100vh;
+  padding: 0px 4px;
+
+  @include tablet {
+    padding: 0px 12px;
   }
+
+  @include desktop {
+    padding: 0px 36px;
+  }
+}
+
+.layout {
+  position: relative;
 }
