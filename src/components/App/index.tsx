@@ -4,7 +4,6 @@ import LandingPage from "../Layouts/LandingPage";
 import MarsRoverPage from "../Layouts/MarsRoverPage";
 import "./styles.scss";
 import NavBar from "../NavBar";
-import MarsRover from "../NavBar/testMarsRover";
 
 const App: React.FC = () => {
   return (
@@ -16,7 +15,6 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/marsrover" element={<MarsRoverPage />} />
-          <Route path="/MarsRover" element={<MarsRover />} />
         </Routes>
       </body>
     </Router>
