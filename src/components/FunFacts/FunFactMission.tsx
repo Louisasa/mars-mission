@@ -1,9 +1,11 @@
+import { Link } from "react-router-dom";
+import { factList } from "./factList";
 import "./FunFact.scss";
 
-export default function FunFactRover(props: any) {
+export default function FunFactMission(props: any) {
   return (
     <body>
-      {props.rover.facts.map((fact: any) => (
+      {props.mission.facts.map((fact: any) => (
         <div className="card-container">
           <div className="fact-container">
             <p className="title">{fact.title} </p>

@@ -1,9 +1,9 @@
 import "./FunFact.scss";
 
-export default function FunFactRover(props: any) {
+export default function FunFactEnv(props: any) {
   return (
     <body>
-      {props.rover.facts.map((fact: any) => (
+      {props.env.facts.map((fact: any) => (
         <div className="card-container">
           <div className="fact-container">
             <p className="title">{fact.title} </p>
