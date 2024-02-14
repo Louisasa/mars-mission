@@ -9,7 +9,7 @@ export const PictureTile: React.FC<PictureTileProps> = ({
   imgaeUrl,
 }) => {
   return (
-    <div className="image_wrapper">
+    <div className="image_wrapper" data-test-id="image-and-content">
       <img src={imgaeUrl} alt={title} />
 
       <div className="overlay title">
@@ -19,7 +19,7 @@ export const PictureTile: React.FC<PictureTileProps> = ({
       <div className="overlay explanation">
         <div className="text-container">
           <h3>{title}</h3>
-          <p>{info}</p>
+          <p data-testid="info">{info}</p>
         </div>
       </div>
     </div>
