@@ -1,9 +1,10 @@
 import "./FunFact.scss";
+import { Fact } from "./factList";
 
-export default function FunFactRover(props: any) {
+export default function FunFactRover(props: { facts: Fact[] }) {
   return (
     <body>
-      {props.rover.facts.map((fact: any) => (
+      {props.facts.map((fact) => (
         <div className="card-container">
           <div className="fact-container">
             <p className="title">{fact.title} </p>

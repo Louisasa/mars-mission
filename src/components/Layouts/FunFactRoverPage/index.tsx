@@ -5,7 +5,7 @@ export default function FunFactRoverPage() {
   return (
     <div>
       <FunFactRover
-        rover={factList.find((cate: any) => cate.category === "rover")}
+        facts={factList.filter((cate) => cate.category === "rover")}
       />
     </div>
   );

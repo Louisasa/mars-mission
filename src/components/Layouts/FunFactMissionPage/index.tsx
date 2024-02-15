@@ -1,4 +1,3 @@
-// import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { factList } from "../../FunFacts/factList";
 import FunFactMission from "../../FunFacts/FunFactMission";
 

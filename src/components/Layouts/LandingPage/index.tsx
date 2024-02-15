@@ -2,6 +2,9 @@ import React from "react";
 import "./styles.scss";
 import ThreeColumnSection from "../ThreeColumnSection";
 import ColumnSection from "../ThreeColumnSection/columnSection";
+import FunFactPage from "../FunFactPage";
+import FunFactRover from "../../FunFacts/FunFactRover";
+import { factList } from "../../FunFacts/factList";
 
 const LandingPage: React.FC = () => {
   return (
@@ -14,7 +17,9 @@ const LandingPage: React.FC = () => {
           <div>hi2</div>
         </ColumnSection>
         <ColumnSection className="section-3">
-          <div>hi3</div>
+          <div>
+            <FunFactRover facts={[factList[Math.floor(Math.random() * 10)]]} />
+          </div>
         </ColumnSection>
       </ThreeColumnSection>
     </div>

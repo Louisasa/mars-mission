@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-import { factList } from "./factList";
 import "./FunFact.scss";
 
 export default function FunFactMission(props: any) {
