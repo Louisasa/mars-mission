@@ -8,12 +8,7 @@ import MarsRoverPage from "../Layouts/MarsRoverPage";
 const App: React.FC = () => {
   return (
     <Router>
-      {" "}
-      {/*Everything from Router onwards is controlled by Router*/}
       <Routes>
-        {" "}
-        {/*Group of Routes*/}
-        {/*URL mapping: input (path), output (element)*/}
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/marsrover" element={<MarsRoverPage />} />
