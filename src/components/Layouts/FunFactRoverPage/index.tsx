@@ -1,10 +1,10 @@
 import { factList } from "../../FunFacts/factList";
-import FunFactRover from "../../FunFacts/FunFactRover";
+import FunFactCategory from "../../FunFacts/FunFactCategory";
 
 export default function FunFactRoverPage() {
   return (
     <div>
-      <FunFactRover
+      <FunFactCategory
         facts={factList.filter((cate) => cate.category === "rover")}
       />
     </div>

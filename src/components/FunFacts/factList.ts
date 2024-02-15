@@ -27,7 +27,7 @@ export const factList: Fact[] = [
     content:
       "Mars is also called the red planet. It get its colour from ... As most planets it was named by the Romans (and the Greeks before them) after a God. Because its color was reminiscent of the colour of blodd it was named after the God of war.",
     links: "http://...",
-    category: "rover",
+    category: "environment",
   },
 
   {
@@ -37,7 +37,7 @@ export const factList: Fact[] = [
     content:
       "Mars has two small moons, Phobos and Deimos which were named after the two mythical horses that pulled the chariot of the Greek god of war. The moons were probably asteroids that remained in Mars' gravitational field. Due to their small mass there is no sufficient graviattional pull to make them speherical. ",
     links: "http://...",
-    category: "rover",
+    category: "environment",
   },
   {
     title: "Days and years",
@@ -46,7 +46,7 @@ export const factList: Fact[] = [
     content:
       "A day in Mars, called a sol, is 24h 39 min. A year, defined as the time taken to orbit around the sun, is 687 earth days or 669 sols",
     links: "http://...",
-    category: "rover",
+    category: "environment",
   },
   {
     title: "Mars size and gravity",
@@ -55,14 +55,14 @@ export const factList: Fact[] = [
     content:
       "Mars' radius is 3,390km radius; about half the size of Earth. Its mass is about 10 times less than earth giving it a gravity 3.78 m/s2, which is 38% of earth's gravity. A 60 kg person standing on Mars would feel as heavy as a 22.8 peron on earth.!",
     links: "http://",
-    category: "rover",
+    category: "environment",
   },
   {
     title: "Atmosphere",
     image: image7,
     id: 7,
     content: "Mars atmosphere is 100 times thinner than earth's.  ",
-    category: "environment",
+    category: "mission",
   },
 
   {
@@ -70,7 +70,7 @@ export const factList: Fact[] = [
     image: image8,
     id: 8,
     content: "Pathfinder",
-    category: "environment",
+    category: "mission",
   },
   {
     title: "First mission to Mars",
@@ -78,7 +78,7 @@ export const factList: Fact[] = [
     id: 3,
     content:
       "The first successful mission to Mars was NASA's Viking 1 mission in 1976.",
-    category: "environment",
+    category: "mission",
   },
   {
     title: "Rover lands on mars",
@@ -86,7 +86,7 @@ export const factList: Fact[] = [
     id: 4,
     content:
       "Perseverance was launched on July 2020 and landed on Mars on February 2021.  ",
-    category: "environment",
+    category: "rover",
   },
   {
     title: "Rover made Oxygen",
@@ -94,21 +94,21 @@ export const factList: Fact[] = [
     id: 9,
     content:
       "A toaster-size experimental instrument aboard Perseverance called the Mars Oxygen In-Situ Resource Utilization Experiment (MOXIE) accomplished the task by converting carbon dioxide into oxygen. Oxygen is not only required for humans to breath but is also necessary for fuel to burn. A human expedition to mars will need around 30 tonns of oxygen to be able to make their way back.  ",
-    category: "mission",
+    category: "rover",
   },
   {
     title: "Curiosity",
     image: image10,
     id: 10,
     content: "Curiosity was lanched in November 2011 and it is still active.",
-    category: "mission",
+    category: "rover",
   },
   {
     title: "Ingenuity",
     image: image11,
     id: 11,
     content: "Perseverance helicopter",
-    category: "mission",
+    category: "rover",
   },
   {
     title: "Atmosphere composition",

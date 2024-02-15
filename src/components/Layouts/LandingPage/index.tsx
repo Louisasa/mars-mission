@@ -3,8 +3,9 @@ import "./styles.scss";
 import ThreeColumnSection from "../ThreeColumnSection";
 import ColumnSection from "../ThreeColumnSection/columnSection";
 import FunFactPage from "../FunFactPage";
-import FunFactRover from "../../FunFacts/FunFactRover";
+import FunFactCategory from "../../FunFacts/FunFactCategory";
 import { factList } from "../../FunFacts/factList";
+import { Link } from "react-router-dom";
 
 const LandingPage: React.FC = () => {
   return (
@@ -18,7 +19,10 @@ const LandingPage: React.FC = () => {
             <div className="test">hi2</div>
           </ColumnSection>
           <ColumnSection className="section-3">
-            <FunFactRover facts={[factList[Math.floor(Math.random() * 10)]]} />
+            <FunFactCategory
+              facts={[factList[Math.floor(Math.random() * 12)]]}
+            />
+            <Link to="/funfact">Go to Fun Fact Page!</Link>
           </ColumnSection>
         </ThreeColumnSection>
       </div>

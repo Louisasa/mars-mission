@@ -1,9 +1,10 @@
 import "./FunFact.scss";
+import { Fact } from "./factList";
 
-export default function FunFactMission(props: any) {
+export default function FunFactCategory(props: { facts: Fact[] }) {
   return (
     <body>
-      {props.mission.facts.map((fact: any) => (
+      {props.facts.map((fact) => (
         <div className="card-container">
           <div className="fact-container">
             <p className="title">{fact.title} </p>

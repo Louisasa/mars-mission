@@ -1,11 +1,11 @@
 import { factList } from "../../FunFacts/factList";
-import FunFactEnv from "../../FunFacts/FunFactEnv";
+import FunFactCategory from "../../FunFacts/FunFactCategory";
 
 export default function FunFactEnvPage() {
   return (
     <div>
-      <FunFactEnv
-        env={factList.find((cate: any) => cate.category === "environment")}
+      <FunFactCategory
+        facts={factList.filter((cate) => cate.category === "environment")}
       />
     </div>
   );

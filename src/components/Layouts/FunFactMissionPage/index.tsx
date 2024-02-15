@@ -1,11 +1,11 @@
 import { factList } from "../../FunFacts/factList";
-import FunFactMission from "../../FunFacts/FunFactMission";
+import FunFactCategory from "../../FunFacts/FunFactCategory";
 
 export default function FunFactMissionPage() {
   return (
     <div>
-      <FunFactMission
-        mission={factList.find((cate: any) => cate.category === "mission")}
+      <FunFactCategory
+        facts={factList.filter((cate: any) => cate.category === "mission")}
       />
     </div>
   );
