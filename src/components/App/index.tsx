@@ -1,10 +1,10 @@
 import React from "react";
 import "./styles.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { Quiz } from "../Quiz/index"; // File location finds the file "index" automatically
 import LandingPage from "../Layouts/LandingPage";
 import MarsRoverPage from "../Layouts/MarsRoverPage";
 import NavBar from "../NavBar";
+import QuizPage from "../Layouts/QuizPage";
 
 import FunFactPage from "../Layouts/FunFactPage";
 import FunFactRoverPage from "../Layouts/FunFactRoverPage";
@@ -19,7 +19,7 @@ const App: React.FC = () => {
       </header>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/quiz" element={<Quiz />} />
+        <Route path="/quiz" element={<QuizPage />} />
         <Route path="/marsrover" element={<MarsRoverPage />} />
         <Route path="/funfact" element={<FunFactPage />} />
         <Route path="/funfact/rover" element={<FunFactRoverPage />} />

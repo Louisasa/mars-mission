@@ -2,10 +2,10 @@ import React from "react";
 import "./styles.scss";
 import ThreeColumnSection from "../ThreeColumnSection";
 import ColumnSection from "../ThreeColumnSection/columnSection";
-import FunFactPage from "../FunFactPage";
 import FunFactCategory from "../../FunFacts/FunFactCategory";
 import { factList } from "../../FunFacts/factList";
 import { Link } from "react-router-dom";
+import Quiz from "../../Quiz";
 
 const LandingPage: React.FC = () => {
   return (
@@ -13,7 +13,7 @@ const LandingPage: React.FC = () => {
       <div className="landing-page layout">
         <ThreeColumnSection>
           <ColumnSection className="section-1">
-            <div className="test">hi</div>
+            <Quiz />
           </ColumnSection>
           <ColumnSection className="section-2">
             <div className="test">hi2</div>
