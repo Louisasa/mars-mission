@@ -23,7 +23,6 @@ export const APOD = () => {
     const apodApiData = async () => {
       try {
         setLoading(true);
-        //setApodData(ApiDefaultResponse);
         const response = await fetch(
           `https://api.nasa.gov/planetary/apod?api_key=QU3jsXCt6UJSAy51UGZedistr2a2g78DgzZK1RLB`,
         );

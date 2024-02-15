@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-//import fetch from "node-fetch";
 import { APOD } from "./apod";
 
 const mockResponse = {
@@ -14,12 +13,6 @@ const mockResponse = {
   url: "https://apod.nasa.gov/apod/image/2402/WolfMoon_Zegarski_960.jpg",
 };
 
-// jest.spyOn(global, "fetch").mockImplementation(
-//   jest.fn(
-//     () => Promise.resolve({ json: () => Promise.resolve(mockResponse),
-//   }),
-// ) as jest.Mock )
-// This is the section where we mock `fetch`
 const unmockedFetch = global.fetch;
 
 beforeAll(() => {
