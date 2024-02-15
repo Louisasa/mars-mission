@@ -1,0 +1,49 @@
+@import "../commonStyles/constants.scss";
+
+$fontBold: 600;
+
+h1 {
+  @include text("title");
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  @include margin;
+
+  .fact-container {
+    background-color: #151820;
+    @include text("subheading");
+    @include margin;
+
+    img {
+      width: 100%;
+    }
+
+    .content {
+      @include margin;
+      text-align: left;
+      color: whitesmoke;
+    }
+
+    .title {
+      font-weight: $fontBold;
+      @include text("heading");
+      margin-left: 1rem;
+    }
+    .text-container {
+      @include margin;
+      text-align: left;
+      .username {
+        @include text("paragraph");
+      }
+    }
+
+    .stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+  }
+}

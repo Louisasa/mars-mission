@@ -6,6 +6,11 @@ import MarsRoverPage from "../Layouts/MarsRoverPage";
 import NavBar from "../NavBar";
 import QuizPage from "../Layouts/QuizPage";
 
+import FunFactPage from "../Layouts/FunFactPage";
+import FunFactRoverPage from "../Layouts/FunFactRoverPage";
+import FunFactMissionPage from "../Layouts/FunFactMissionPage";
+import FunFactEnvPage from "../Layouts/FunFactEnvPage";
+
 const App: React.FC = () => {
   return (
     <Router>
@@ -13,9 +18,13 @@ const App: React.FC = () => {
         <NavBar />
       </header>
       <Routes>
-        <Route path="/quiz" element={<QuizPage />} />
         <Route path="/" element={<LandingPage />} />
+        <Route path="/quiz" element={<QuizPage />} />
         <Route path="/marsrover" element={<MarsRoverPage />} />
+        <Route path="/funfact" element={<FunFactPage />} />
+        <Route path="/funfact/rover" element={<FunFactRoverPage />} />
+        <Route path="/funfact/mission" element={<FunFactMissionPage />} />
+        <Route path="/funfact/environment" element={<FunFactEnvPage />} />
       </Routes>
     </Router>
   );
