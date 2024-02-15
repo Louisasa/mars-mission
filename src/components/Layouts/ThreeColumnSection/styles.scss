@@ -5,7 +5,6 @@
   justify-content: space-between;
   flex-direction: column;
   background-image: url("../../../assets/backgroundimage1.jpeg");
-  z-index: -2;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -16,7 +15,6 @@
 }
 
 .column-section {
-  z-index: -1;
   background-repeat: no-repeat;
   background-size: cover;
   @include tablet {
