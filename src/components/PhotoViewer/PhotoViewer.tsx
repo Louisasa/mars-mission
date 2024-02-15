@@ -18,7 +18,8 @@ const PhotoViewer: React.FC = () => {
   const [selectedRover, setSelectedRover] = useState<string>("spirit");
   const [coverImageUrl, setCoverImageUrl] = useState<string>("");
   const [date, setDate] = useState<string>();
-  const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&sol=100`;
+  const [dateParam, setDateParam] = useState<string>("sol=100");
+  const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&${dateParam}`;
 
   var roverNameCapitals =
     selectedRover.charAt(0).toUpperCase() + selectedRover.substring(1);
