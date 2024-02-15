@@ -1,0 +1,123 @@
+@import "../commonStyles/constants.scss";
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+li {
+  list-style: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: #252a38;
+}
+
+.nav-menu {
+  position: fixed;
+  right: -100%;
+  top: 5rem;
+  background-color: #252a38;
+  width: 50%;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+  z-index: 10;
+  @include padding(0);
+  @include margin(0);
+}
+
+.nav-menu.active {
+  right: 0;
+}
+
+.nav-item {
+  margin: 2.5rem 0;
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+}
+
+//hamburger icon to close icon
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-link {
+  @include text("heading");
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #482ff7;
+}
+
+.nav-logo {
+  @include text("title");
+  color: #482ff7;
+}
+
+@include tablet {
+  .nav-menu {
+    width: 30%;
+  }
+}
+
+@include desktop {
+  .hamburger {
+    display: none;
+  }
+  .nav-menu {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    width: auto;
+  }
+  .nav-item {
+    margin: 0 0 0 2.5rem;
+  }
+}

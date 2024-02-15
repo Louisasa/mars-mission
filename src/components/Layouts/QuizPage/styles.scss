@@ -1,0 +1,11 @@
+@import "../../commonStyles/constants.scss";
+
+.quiz-page {
+  .coverImageContainer {
+    background-image: url("../../../assets/backgroundimage1.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    @include padding(3);
+  }
+}
