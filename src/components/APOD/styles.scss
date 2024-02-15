@@ -76,34 +76,26 @@
   animation: spinner 1.5s linear infinite;
 }
 
-.btn-container {
+.buttons {
   display: flex;
-  flex-direction: "row";
-  align-items: center;
-  background-color: #fff;
-  padding: 30px 50px;
-  border-radius: 12px;
+  flex-direction: row;
 }
 
-.btn {
-  border: none;
-  color: #fff;
-  font-size: 0.8rem;
+.radioButtons {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  background-color: #bdc0c5;
-  border-radius: 4px;
-  padding: 6px 15px;
-  margin: 0 10px;
+  flex-direction: row;
+  color: #ffffff;
+  top: 10px;
+  right: 20px;
 }
-
-.like-active {
-  background-color: #ff0063;
+.like {
+  color: #ff0063;
 }
-
-.dislike-active {
-  background-color: #394350;
+.dislike {
+  color: #d4482a;
+}
+.active {
+  font-weight: 1000;
 }
 
 @media only screen and (max-width: 550px) {

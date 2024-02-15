@@ -3,7 +3,7 @@ import { PictureTile } from "./picture_tile";
 import { ApiDefaultResponse } from "./default_api_data";
 import { LoadingSpinner } from "./loading_spinner";
 import "./styles.scss";
-import { LikeButton } from "./like_dislike_button";
+import { LikeDislikeButton } from "./like_dislike_button";
 interface ApodApi {
   copyright: string;
   date: string;
@@ -49,7 +49,7 @@ export const APOD = () => {
       {apodData && (
         <div className="apod">
           <PictureTile title={title} imgaeUrl={imageUrl} info={info} />
-          <LikeButton />
+          <LikeDislikeButton />
         </div>
       )}
       {loading && <LoadingSpinner />}
