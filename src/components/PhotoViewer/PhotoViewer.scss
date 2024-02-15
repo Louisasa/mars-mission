@@ -1,11 +1,5 @@
 @import "../commonStyles/constants.scss";
 
-$background-color: #0c134f;
-
-body {
-  background-color: $background-color;
-}
-
 h1 {
   @include text(heading);
 }

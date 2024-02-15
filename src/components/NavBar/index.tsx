@@ -35,6 +35,11 @@ const NavBar = () => {
                 Mars Rover
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/quiz" onClick={closeMenuOnMobile}>
+                Quiz
+              </Link>
+            </li>
           </ul>
           <div
             className={`hamburger ${showMenu ? "active" : ""}`}
@@ -46,7 +51,10 @@ const NavBar = () => {
           </div>
         </nav>
       </header>
-      <div id="overlay" onClick={closeMenuOnMobile}></div>
+      <div
+        className={`overlay ${showMenu ? "show" : ""}`}
+        onClick={closeMenuOnMobile}
+      ></div>
     </>
   );
 };

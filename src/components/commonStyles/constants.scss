@@ -36,9 +36,7 @@ $tabletMinWidth: 600px;
 }
 
 .gutter {
-  background-color: rgb(43, 51, 75);
   position: relative;
-  height: 100vh;
   padding: 0px 4px;
 
   @include tablet {
@@ -52,4 +50,8 @@ $tabletMinWidth: 600px;
 
 .layout {
   position: relative;
+}
+
+body {
+  background-color: rgb(43, 51, 75);
 }
