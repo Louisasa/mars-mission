@@ -1,0 +1,27 @@
+@import "../commonStyles/constants.scss";
+
+.quiz-question {
+  @include text("subheading");
+  @include margin(0);
+}
+
+.quiz-answer {
+  @include text("paragraph");
+  @include padding(1);
+}
+
+.quiz-result {
+  @include margin(0);
+}
+
+.quiz-container {
+  @include margin(1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ul {
+    @include padding(0);
+    @include margin(1);
+  }
+}
