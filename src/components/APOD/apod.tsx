@@ -3,6 +3,7 @@ import { PictureTile } from "./picture_tile";
 import { ApiDefaultResponse } from "./default_api_data";
 import { LoadingSpinner } from "./loading_spinner";
 import "./styles.scss";
+import { LikeButton } from "./like_dislike_button";
 interface ApodApi {
   copyright: string;
   date: string;
@@ -22,6 +23,7 @@ export const APOD = () => {
     const apodApiData = async () => {
       try {
         setLoading(true);
+        //setApodData(ApiDefaultResponse);
         const response = await fetch(
           `https://api.nasa.gov/planetary/apod?api_key=QU3jsXCt6UJSAy51UGZedistr2a2g78DgzZK1RLB`,
         );
@@ -48,6 +50,7 @@ export const APOD = () => {
       {apodData && (
         <div className="apod">
           <PictureTile title={title} imgaeUrl={imageUrl} info={info} />
+          <LikeButton />
         </div>
       )}
       {loading && <LoadingSpinner />}
