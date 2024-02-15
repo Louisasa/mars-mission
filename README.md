@@ -33,6 +33,22 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 Run this command to format your files
 
+### `API key`
+
+Parts of the project, for example the PhotoViewer component, require an API key to query the NASA API. The API key can be stored as an environment variable.
+
+Start by created a file named '.env.local' in the root directory of the project.
+
+In the '.env.local' file, define your environment variable in the format:
+
+```
+REACT_APP_API_KEY=your_api_key_here
+```
+
+Note that you do not need quotation marks around the API key value.
+
+You can access the API key anywhere in the project using 'process.env.REACT_APP_API_KEY'.
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

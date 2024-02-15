@@ -1,0 +1,68 @@
+@import "../commonStyles/constants.scss";
+
+$background-color: #0c134f;
+
+body {
+  background-color: $background-color;
+}
+
+h1 {
+  @include text(heading);
+}
+
+h2 {
+  @include text(subheading);
+}
+
+p {
+  @include text(paragraph);
+}
+
+button {
+  background-color: #d21312;
+  @include text(subheading);
+  border: none;
+  border-radius: 5%;
+  padding: 20px;
+  flex: 30%;
+}
+
+button:hover {
+  background-color: #f15a59;
+}
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include margin(10);
+}
+
+.coverImageContainer {
+  display: flex;
+  justify-content: center;
+}
+.coverImage {
+  width: auto;
+  height: 75vh;
+  margin-bottom: 10px;
+}
+
+.thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 10px;
+}
+
+.thumbnails img {
+  width: 21%;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 15px;
+}
+
+.border {
+  border: 6px solid grey;
+}
