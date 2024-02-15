@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Fact } from "./factList";
 import "./FunFact.scss";
 import FunFactCategory from "./FunFactCategory";
+import FunFactCard from "./FunFactCard";
 
 export default function FunFacts(props: { facts: Fact[] }) {
   const roverList = props.facts.filter((cate) => cate.category === "rover");
@@ -18,7 +19,10 @@ export default function FunFacts(props: { facts: Fact[] }) {
 
   return (
     <body>
-      <FunFactCategory facts={funfactList} />
+      <h1>Fun Facts</h1>
+      <FunFactCard fact={roverRandom} link="/funfact/rover" />
+      <FunFactCard fact={missionRandom} link="/funfact/mission" />
+      <FunFactCard fact={environmentRandom} link="/funfact/environment" />
     </body>
   );
 }

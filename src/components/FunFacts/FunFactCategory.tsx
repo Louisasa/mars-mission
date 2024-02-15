@@ -1,17 +1,13 @@
 import "./FunFact.scss";
+import FunFactCard from "./FunFactCard";
 import { Fact } from "./factList";
 
 export default function FunFactCategory(props: { facts: Fact[] }) {
   return (
     <body>
+      <h1>Fun facts on {props.facts[0].category}</h1>
       {props.facts.map((fact) => (
-        <div className="card-container">
-          <div className="fact-container">
-            <p className="title">{fact.title} </p>
-            <img src={fact.image} alt="fact image" />
-            <p className="content">{fact.content} </p>
-          </div>
-        </div>
+        <FunFactCard fact={fact} />
       ))}
     </body>
   );

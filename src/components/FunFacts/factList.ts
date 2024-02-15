@@ -69,7 +69,7 @@ export const factList: Fact[] = [
     title: "Other Mars missions",
     image: image8,
     id: 8,
-    content: "Pathfinder",
+    content: "Pathfinder was launched on December 1996",
     category: "mission",
   },
   {
