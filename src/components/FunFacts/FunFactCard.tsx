@@ -4,17 +4,21 @@ import { Link } from "react-router-dom";
 
 export default function FunFactCard(props: { fact: Fact; link?: string }) {
   return (
-    <body>
+    <div>
       <div className="card-container">
         <div className="fact-container">
-          <p className="title">
-            {props.fact.title}{" "}
-            {props.link && <Link to={props.link}>More facts</Link>}{" "}
-          </p>
+          <p className="title">{props.fact.title} </p>
           <img src={props.fact.image} alt="fact image" />
           <p className="content">{props.fact.content} </p>
+          <p>
+            {props.link && (
+              <Link to={props.link}>
+                See more facts on {props.fact.category}
+              </Link>
+            )}{" "}
+          </p>
         </div>
       </div>
-    </body>
+    </div>
   );
 }

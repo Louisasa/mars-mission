@@ -11,7 +11,6 @@ import FunFactMissionPage from "../Layouts/FunFactMissionPage";
 import FunFactEnvPage from "../Layouts/FunFactEnvPage";
 
 const App: React.FC = () => {
-  // const facts: [] = factList;
   return (
     <Router>
       <Routes>

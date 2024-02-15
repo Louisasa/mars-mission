@@ -4,11 +4,11 @@ import { Fact } from "./factList";
 
 export default function FunFactCategory(props: { facts: Fact[] }) {
   return (
-    <body>
+    <div>
       <h1>Fun facts on {props.facts[0].category}</h1>
       {props.facts.map((fact) => (
         <FunFactCard fact={fact} />
       ))}
-    </body>
+    </div>
   );
 }

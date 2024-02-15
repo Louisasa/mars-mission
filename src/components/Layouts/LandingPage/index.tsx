@@ -19,9 +19,11 @@ const LandingPage: React.FC = () => {
             <div className="test">hi2</div>
           </ColumnSection>
           <ColumnSection className="section-3">
-            <FunFactCategory
-              facts={[factList[Math.floor(Math.random() * 12)]]}
-            />
+            <div className="funfact">
+              <FunFactCategory
+                facts={[factList[Math.floor(Math.random() * 12)]]}
+              />
+            </div>
             <Link to="/funfact">Go to Fun Fact Page!</Link>
           </ColumnSection>
         </ThreeColumnSection>

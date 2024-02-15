@@ -1,64 +1,49 @@
-$widthMobile: 430px;
-$fontSizeBoby: 16px;
+@import "../commonStyles/constants.scss";
+
 $fontBold: 600;
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  gap: 10px;
-  padding: 10px;
+h1 {
+  @include text("title");
 }
-.gridItem {
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-}
+  @include margin;
 
-body {
-  background-color: #252a38;
-  color: #dcdcdc;
+  .fact-container {
+    background-color: #151820;
+    @include text("subheading");
+    @include margin;
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    max-width: $widthMobile;
+    img {
+      width: 100%;
+    }
 
-    .fact-container {
-      background-color: #151820;
-      margin: 0 0 1rem 0;
-      font-size: $fontSizeBoby;
+    .content {
+      @include margin;
+      text-align: left;
+      color: whitesmoke;
+    }
 
-      img {
-        max-width: $widthMobile;
+    .title {
+      font-weight: $fontBold;
+      @include text("heading");
+      margin-left: 1rem;
+    }
+    .text-container {
+      @include margin;
+      text-align: left;
+      .username {
+        @include text("paragraph");
       }
+    }
 
-      .content {
-        margin-left: 1rem;
-        margin-bottom: 1rem;
-        text-align: left;
-        // font-weight: $fontBold;
-        color: whitesmoke;
-      }
-      .title {
-        font-weight: $fontBold;
-        font-size: larger;
-        margin-left: 1rem;
-      }
-      .text-container {
-        margin-left: 0.5rem;
-        text-align: left;
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: space-evenly;
-
-        .username {
-          font-weight: $fontBold;
-        }
-      }
-
-      .stats {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-      }
+    .stats {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
     }
   }
 }

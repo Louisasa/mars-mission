@@ -18,11 +18,11 @@ export default function FunFacts(props: { facts: Fact[] }) {
   const funfactList = [roverRandom, missionRandom, environmentRandom];
 
   return (
-    <body>
+    <div>
       <h1>Fun Facts</h1>
       <FunFactCard fact={roverRandom} link="/funfact/rover" />
       <FunFactCard fact={missionRandom} link="/funfact/mission" />
       <FunFactCard fact={environmentRandom} link="/funfact/environment" />
-    </body>
+    </div>
   );
 }
