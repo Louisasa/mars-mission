@@ -38,6 +38,7 @@
   transform: scale(0);
   transition: all 0.3s ease-in-out;
   backdrop-filter: blur(8px) brightness(80%);
+  z-index: 2;
 }
 
 .image_wrapper:hover .explanation {
