@@ -15,7 +15,6 @@
 
 .overlay {
   position: absolute;
-  /* center overlay text */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,12 +24,14 @@
   @include padding;
   @include margin;
   @include text("heading");
+  @include tablet {
+    font-size: 15px;
+  }
   top: 0;
   font-family: cursive;
 }
 
 .explanation {
-  @include padding(2);
   @include text("paragraph");
   flex-direction: column;
   justify-content: center;
@@ -40,9 +41,13 @@
   transition: all 0.3s ease-in-out;
   backdrop-filter: blur(8px) brightness(80%);
   z-index: 2;
+  @include desktop {
+    font-size: 15px;
+  }
 }
 
-.image_wrapper:hover .explanation {
+.image_wrapper:hover .explanation,
+.image_wrapper:active .explanation {
   transform: scale(1);
 }
 
@@ -58,11 +63,15 @@
     transform: rotate(360deg);
   }
 }
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 10px solid #c4d46f; /* Light grey */
-  border-top: 10px solid #383636; /* Black */
+  border: 10px solid #c4d46f;
+  border-top: 10px solid #383636;
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
 }
@@ -97,5 +106,13 @@
   background-color: #394350;
 }
 
-@media screen and (min-width: $tabletMinWidth) {
+@media only screen and (max-width: 550px) {
+  .explanation {
+    font-size: 10px;
+    @include padding(1);
+  }
+
+  .title {
+    font-size: 10px;
+  }
 }
