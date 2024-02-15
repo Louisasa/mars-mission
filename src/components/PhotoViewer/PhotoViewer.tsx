@@ -14,7 +14,6 @@ interface Photo {
 interface RoverData {
   photos: Photo[];
 }
-
 const PhotoViewer: React.FC = () => {
   const [roverData, setRoverData] = useState<RoverData>();
   const [selectedRover, setSelectedRover] = useState<string>("spirit");
@@ -33,7 +32,11 @@ const PhotoViewer: React.FC = () => {
       .then((response) => response.json())
       .then((data) => {
         setRoverData(data);
-        // setCoverImageUrl(data.photos[0].img_src);
+        if (data.photos.length > 0) {
+          setCoverImageUrl(data.photos[0].img_src);
+        } else {
+          setCoverImageUrl("");
+        }
       });
   }, [selectedRover, dateParam]);
 
@@ -49,8 +52,8 @@ const PhotoViewer: React.FC = () => {
   const handleDateSubmit = () => {
     if (date) {
       let stringDate = date.toISOString().slice(0, 10);
-      setDateParam("earth_date=" + stringDate);
-      console.log(dateParam);
+      let newDateParam = "earth_date=" + stringDate;
+      setDateParam(newDateParam);
     }
   };
 
@@ -68,30 +71,42 @@ const PhotoViewer: React.FC = () => {
         <Button onClick={() => handleClick("opportunity")} name="Opportunity" />
       </div>
       <p>You've selected {roverNameCapitals} rover</p>
-      <h2>Please select date</h2>
+      <h2>Please select a date</h2>
       <DatePicker
-        minDate={new Date("January 1, 2004")}
+        minDate={new Date("January 4, 2004")}
         selected={date}
         onChange={(date) => setDate(date)}
+        dateFormat="dd-MM-yyyy"
       />
       <div className="buttonContainer">
         <button onClick={() => handleDateSubmit()}>Submit</button>
       </div>
-      <div className="coverImageContainer">
-        <img src={coverImageUrl} alt="mars rover" className="coverImage" />
-      </div>
-      {date && <p>This image was captured on {imageDate}</p>}
-      <div className="thumbnails">
-        {roverData.photos.slice(0, 23).map((photo: Photo) => (
-          <img
-            onClick={() => handleImageClick(photo.img_src, photo.earth_date)}
-            key={photo.id}
-            src={photo.img_src}
-            alt="mars rover"
-            className={photo.img_src === coverImageUrl ? "border" : ""}
-          />
-        ))}
-      </div>
+      {roverData.photos.length > 0 && (
+        <>
+          <div className="coverImageContainer">
+            <img src={coverImageUrl} alt="mars rover" className="coverImage" />
+          </div>
+          {imageDate && <p>This image was captured on {imageDate}</p>}
+          <div className="thumbnails">
+            {roverData.photos.slice(0, 23).map((photo: Photo) => (
+              <img
+                onClick={() =>
+                  handleImageClick(photo.img_src, photo.earth_date)
+                }
+                key={photo.id}
+                src={photo.img_src}
+                alt="mars rover"
+                className={photo.img_src === coverImageUrl ? "border" : ""}
+              />
+            ))}
+          </div>
+        </>
+      )}
+      {roverData.photos.length === 0 && (
+        <div>
+          <p>No images match this search, please try a different date</p>
+        </div>
+      )}
     </div>
   );
 };
