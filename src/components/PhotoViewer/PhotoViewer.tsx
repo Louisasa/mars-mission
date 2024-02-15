@@ -1,6 +1,7 @@
 import "./PhotoViewer.scss";
 import React from "react";
 import { useState, useEffect } from "react";
+import Button from "../Button/Button";
 
 interface Photo {
   id: number;
@@ -49,9 +50,9 @@ const PhotoViewer: React.FC = () => {
       <h1>Mars Rover Photo Viewer</h1>
       <h2>Please select your rover</h2>
       <div className="buttonContainer">
-        <button onClick={() => handleClick("curiosity")}>Curiosity</button>
-        <button onClick={() => handleClick("spirit")}>Spirit</button>
-        <button onClick={() => handleClick("opportunity")}>Opportunity</button>
+        <Button onClick={() => handleClick("curiosity")} name="Curiosity" />
+        <Button onClick={() => handleClick("spirit")} name="Spirit" />
+        <Button onClick={() => handleClick("opportunity")} name="Opportunity" />
       </div>
       <p>You've selected {roverNameCapitals} rover</p>
       <div className="coverImageContainer">
