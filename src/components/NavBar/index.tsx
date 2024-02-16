@@ -50,6 +50,20 @@ const NavBar = () => {
                 Fun Facts
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                to="/womeninspace"
+                onClick={closeMenuOnMobile}
+              >
+                Women In Space
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/apod" onClick={closeMenuOnMobile}>
+                APOD
+              </Link>
+            </li>
           </ul>
           <div
             className={`hamburger ${showMenu ? "active" : ""}`}

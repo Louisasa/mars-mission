@@ -37,7 +37,9 @@ const MissionDate: React.FC<MissionDateProps> = ({ name }) => {
       break;
   }
 
-  return <p>Available date range: {missionDuration}</p>;
+  return (
+    <p className="rover-paragraph">Available date range: {missionDuration}</p>
+  );
 };
 
 const PhotoViewer: React.FC = () => {
@@ -88,7 +90,7 @@ const PhotoViewer: React.FC = () => {
   };
 
   if (!roverData) {
-    return <h1>Waiting for data</h1>;
+    return <h1 className="rover-heading">Waiting for data</h1>;
   }
 
   return (

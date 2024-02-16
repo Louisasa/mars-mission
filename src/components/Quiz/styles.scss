@@ -1,17 +1,18 @@
 @import "../commonStyles/constants.scss";
 
 .quiz-question {
-  @include text("subheading");
+  @include text("heading");
   @include margin(0);
 }
 
 .quiz-answer {
-  @include text("paragraph");
+  @include text("subheading");
   @include padding(1);
 }
 
 .quiz-result {
   @include margin(0);
+  @include text("paragraph");
 }
 
 .quiz-container {

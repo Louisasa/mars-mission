@@ -1,6 +1,6 @@
 @import "../commonStyles/constants.scss";
 
-.card-container {
+.wis-card-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
 }
 
 @include tablet {
-  .card-container {
+  .wis-card-container {
     flex-direction: column;
     align-items: center;
   }

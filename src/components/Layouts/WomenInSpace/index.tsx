@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import Card from "../../Card";
+import Button from "../../Button/Button";
 
 export interface WomenInSpaceProps {
   name: string;
@@ -80,9 +81,11 @@ const WomenInSpace: React.FC = () => {
         <Card card={womenInSpace[cardsToShow + 1]} />
         <Card card={womenInSpace[cardsToShow + 2]} />
       </div>
-      <button disabled={cardsToShow === 3} onClick={handleNext}>
-        Show next
-      </button>
+      <Button
+        disabled={cardsToShow === 3}
+        onClick={handleNext}
+        name="Show next"
+      />
     </div>
   );
 };

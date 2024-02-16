@@ -5,7 +5,7 @@ import "./index.scss";
 function Card(props: { card: WomenInSpaceProps }) {
   return (
     <>
-      <div className="card-container">
+      <div className="wis-card-container">
         <img
           className="img"
           src={props.card.img_url}

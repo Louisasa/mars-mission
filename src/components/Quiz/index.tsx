@@ -58,48 +58,50 @@ export function Quiz() {
   };
 
   return (
-    <div className="quiz-container">
-      <h3 className="quiz-question">
-        {questions[randomQuestionIndex].question}
-      </h3>
-      {questions[randomQuestionIndex].type === "radio" && (
-        <ul>
-          {questions[randomQuestionIndex].options.map((option) => (
-            <li key={option} className="quiz-answer">
-              <input
-                type="radio"
-                name={`question${randomQuestionIndex}`}
-                value={option}
-                onChange={handleAnswerChange}
-                disabled={showResult}
-              />
-              {option}
-            </li>
-          ))}
-        </ul>
-      )}
-      {showResult ? (
-        <div>
-          {questions[randomQuestionIndex].answer === selectedAnswer ? (
-            <p className="quiz-result">
-              Correct answer!
-              <br />
-              <button onClick={nextQuestion}>Next question!</button>
-            </p>
-          ) : (
-            <p className="quiz-result">
-              Wrong answer!
-              <br />
-              <button onClick={resetQuiz}>Try again!</button>
-            </p>
-          )}
-        </div>
-      ) : (
-        <p className="quiz-result">
-          <br />
-          <button onClick={submitAnswer}>Submit Answer</button>
-        </p>
-      )}
+    <div className="card-container">
+      <div className="fact-container">
+        <h3 className="quiz-question">
+          {questions[randomQuestionIndex].question}
+        </h3>
+        {questions[randomQuestionIndex].type === "radio" && (
+          <ul>
+            {questions[randomQuestionIndex].options.map((option) => (
+              <li key={option} className="quiz-answer">
+                <input
+                  type="radio"
+                  name={`question${randomQuestionIndex}`}
+                  value={option}
+                  onChange={handleAnswerChange}
+                  disabled={showResult}
+                />
+                {option}
+              </li>
+            ))}
+          </ul>
+        )}
+        {showResult ? (
+          <div>
+            {questions[randomQuestionIndex].answer === selectedAnswer ? (
+              <p className="quiz-result">
+                Correct answer!
+                <br />
+                <button onClick={nextQuestion}>Next question!</button>
+              </p>
+            ) : (
+              <p className="quiz-result">
+                Wrong answer!
+                <br />
+                <button onClick={resetQuiz}>Try again!</button>
+              </p>
+            )}
+          </div>
+        ) : (
+          <p className="quiz-result">
+            <br />
+            <button onClick={submitAnswer}>Submit Answer</button>
+          </p>
+        )}
+      </div>
     </div>
   );
 }
