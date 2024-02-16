@@ -24,7 +24,7 @@ const LandingPage: React.FC = () => {
             </div>
           </ColumnSection>
           <ColumnSection className="section-2">
-            <div className="test">hi2</div>
+            <APOD />
           </ColumnSection>
           <ColumnSection className="section-3">
             <div className="funfact">

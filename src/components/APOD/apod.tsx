@@ -48,8 +48,7 @@ export const APOD = () => {
     <>
       {apodData && (
         <div className="apod">
-          <PictureTile title={title} imgaeUrl={imageUrl} info={info} />
-          <LikeDislikeButton />
+          <PictureTile title={title} imageUrl={imageUrl} info={info} />
         </div>
       )}
       {loading && <LoadingSpinner />}

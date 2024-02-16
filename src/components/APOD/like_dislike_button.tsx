@@ -10,7 +10,7 @@ export function LikeDislikeButton() {
 
   return (
     <div className="buttons">
-      <RadioGroup name="user-like-dislike" className="overlay radioButtons">
+      <RadioGroup name="user-like-dislike" className="pod-overlay radioButtons">
         <LikeBtn
           setLikeCount={setLikeCount}
           setActiveBtn={setActiveBtn}

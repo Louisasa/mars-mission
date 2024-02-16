@@ -2387,7 +2387,6 @@ packages:
       }
     dependencies:
       "@floating-ui/utils": 0.2.1
-    dev: false
 
   /@floating-ui/dom@1.6.3:
     resolution:
@@ -2397,7 +2396,6 @@ packages:
     dependencies:
       "@floating-ui/core": 1.6.0
       "@floating-ui/utils": 0.2.1
-    dev: false
 
   /@floating-ui/react-dom@2.0.8(react-dom@18.2.0)(react@18.2.0):
     resolution:
@@ -2411,14 +2409,27 @@ packages:
       "@floating-ui/dom": 1.6.3
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
-    dev: false
+
+  /@floating-ui/react@0.26.9(react-dom@18.2.0)(react@18.2.0):
+    resolution:
+      {
+        integrity: sha512-p86wynZJVEkEq2BBjY/8p2g3biQ6TlgT4o/3KgFKyTWoJLU1GZ8wpctwRqtkEl2tseYA+kw7dBAIDFcednfI5w==,
+      }
+    peerDependencies:
+      react: ">=16.8.0"
+      react-dom: ">=16.8.0"
+    dependencies:
+      "@floating-ui/react-dom": 2.0.8(react-dom@18.2.0)(react@18.2.0)
+      "@floating-ui/utils": 0.2.1
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      tabbable: 6.2.0
 
   /@floating-ui/utils@0.2.1:
     resolution:
       {
         integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==,
       }
-    dev: false
 
   /@humanwhocodes/config-array@0.11.14:
     resolution:
