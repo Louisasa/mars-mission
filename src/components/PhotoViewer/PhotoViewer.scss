@@ -1,4 +1,5 @@
 @import "../commonStyles/constants.scss";
+@import "../Button/Button.scss";
 
 h1 {
   @include text(heading);
@@ -12,18 +13,6 @@ p {
   @include text(paragraph);
 }
 
-button {
-  background-color: #d21312;
-  @include text(subheading);
-  border: none;
-  border-radius: 5%;
-  padding: 20px;
-  flex: 30%;
-}
-
-button:hover {
-  background-color: #f15a59;
-}
 .mainContainer {
   display: flex;
   flex-direction: column;
