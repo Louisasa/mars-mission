@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles.scss";
 import ThreeColumnSection from "../ThreeColumnSection";
 import ColumnSection from "../ThreeColumnSection/columnSection";
@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 import Quiz from "../../Quiz";
 
 const LandingPage: React.FC = () => {
+  useEffect(() => {
+    document.title = "Mars Mission | Home";
+  }, []);
+
   return (
     <div className="gutter">
       <div className="landing-page layout">
