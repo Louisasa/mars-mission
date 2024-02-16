@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-// import './Quiz.css';
+import "./styles.scss";
 
-export function Quiz(props: any) {
-  const [currentQuestion, setCurrentQuestion] = useState(0);
+export function Quiz() {
   const [selectedAnswer, setSelectedAnswer] = useState("");
   const [randomQuestionIndex, setRandomQuestionIndex] = useState(0);
   const [showResult, setShowResult] = useState(false);
@@ -59,12 +58,14 @@ export function Quiz(props: any) {
   };
 
   return (
-    <div>
-      <h3>{questions[randomQuestionIndex].question}</h3>{" "}
+    <div className="quiz-container">
+      <h3 className="quiz-question">
+        {questions[randomQuestionIndex].question}
+      </h3>
       {questions[randomQuestionIndex].type === "radio" && (
         <ul>
           {questions[randomQuestionIndex].options.map((option) => (
-            <li key={option}>
+            <li key={option} className="quiz-answer">
               <input
                 type="radio"
                 name={`question${randomQuestionIndex}`}
@@ -80,13 +81,13 @@ export function Quiz(props: any) {
       {showResult ? (
         <div>
           {questions[randomQuestionIndex].answer === selectedAnswer ? (
-            <p>
+            <p className="quiz-result">
               Correct answer!
               <br />
               <button onClick={nextQuestion}>Next question!</button>
             </p>
           ) : (
-            <p>
+            <p className="quiz-result">
               Wrong answer!
               <br />
               <button onClick={resetQuiz}>Try again!</button>
@@ -94,7 +95,10 @@ export function Quiz(props: any) {
           )}
         </div>
       ) : (
-        <button onClick={submitAnswer}>Submit Answer</button>
+        <p className="quiz-result">
+          <br />
+          <button onClick={submitAnswer}>Submit Answer</button>
+        </p>
       )}
     </div>
   );

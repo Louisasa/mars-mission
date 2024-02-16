@@ -1,10 +1,30 @@
 @import "../../commonStyles/constants.scss";
 
 .landing-page {
+  .quiz-heading {
+    @include text(title);
+    @include padding(1);
+    display: flex;
+    justify-content: center;
+  }
+
+  .quiz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include padding(3);
+
+    @include desktop {
+      @include padding(1);
+    }
+  }
 }
 
-.test {
-  @include text("paragraph");
-  display: flex;
-  justify-content: center;
+.funfact {
+  @include padding(1);
+}
+
+.link {
+  @include text("subheading");
 }

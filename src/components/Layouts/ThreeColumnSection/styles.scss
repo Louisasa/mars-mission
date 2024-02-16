@@ -4,20 +4,23 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-image: url("../../../assets/backgroundimage1.jpeg");
+  // background-image: url("../../../assets/backgroundimage1.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  gap: 50px;
 
-  @include tablet {
+  @include desktop {
     flex-direction: row;
+    gap: 0;
   }
 }
 
 .column-section {
   background-repeat: no-repeat;
   background-size: cover;
-  @include tablet {
+
+  @include desktop {
     width: 30%;
   }
 }
@@ -26,7 +29,7 @@
   background-image: url("../../../assets/backgroundimage2.jpeg");
   order: 2;
 
-  @include tablet {
+  @include desktop {
     order: 1;
   }
 }
@@ -35,7 +38,7 @@
   background-image: url("../../../assets/backgroundimage2.jpeg");
   order: 1;
 
-  @include tablet {
+  @include desktop {
     order: 2;
   }
 }
