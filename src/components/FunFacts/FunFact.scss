@@ -2,20 +2,21 @@
 
 $fontBold: 600;
 
-h1 {
+.fun-fact-heading {
   @include text("title");
+  display: flex;
+  justify-content: center;
 }
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
   @include margin;
 
   .fact-container {
     background-color: #151820;
-    @include text("subheading");
-    @include margin;
+    @include text("paragraph");
+    @include padding;
 
     img {
       width: 100%;

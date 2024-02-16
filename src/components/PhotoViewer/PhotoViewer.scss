@@ -1,15 +1,15 @@
 @import "../commonStyles/constants.scss";
 @import "../Button/Button.scss";
 
-h1 {
-  @include text(heading);
+.rover-heading {
+  @include text(title);
 }
 
-h2 {
+.rover-subheading {
   @include text(subheading);
 }
 
-p {
+.rover-paragraph {
   @include text(paragraph);
 }
 
@@ -17,7 +17,6 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  @include margin(10);
 }
 
 .coverImageContainer {
@@ -44,6 +43,7 @@ p {
 .buttonContainer {
   display: flex;
   gap: 15px;
+  @include margin(2);
 }
 
 .border {

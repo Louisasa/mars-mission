@@ -12,7 +12,7 @@ export default function FunFactCard(props: { fact: Fact; link?: string }) {
           <p className="content">{props.fact.content} </p>
           <p>
             {props.link && (
-              <Link to={props.link}>
+              <Link to={props.link} className="link">
                 See more facts on {props.fact.category}
               </Link>
             )}{" "}

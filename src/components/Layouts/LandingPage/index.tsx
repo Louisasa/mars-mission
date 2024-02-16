@@ -13,7 +13,10 @@ const LandingPage: React.FC = () => {
       <div className="landing-page layout">
         <ThreeColumnSection>
           <ColumnSection className="section-1">
-            <Quiz />
+            <h1 className="quiz-heading">Quiz your knowledge!</h1>
+            <div className="quiz">
+              <Quiz />
+            </div>
           </ColumnSection>
           <ColumnSection className="section-2">
             <div className="test">hi2</div>
@@ -23,8 +26,10 @@ const LandingPage: React.FC = () => {
               <FunFactCategory
                 facts={[factList[Math.floor(Math.random() * 12)]]}
               />
+              <Link to="/funfact" className="link">
+                Go to Fun Fact Page!
+              </Link>
             </div>
-            <Link to="/funfact">Go to Fun Fact Page!</Link>
           </ColumnSection>
         </ThreeColumnSection>
       </div>
