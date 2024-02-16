@@ -6,6 +6,7 @@ import FunFactCategory from "../../FunFacts/FunFactCategory";
 import { factList } from "../../FunFacts/factList";
 import { Link } from "react-router-dom";
 import Quiz from "../../Quiz";
+import { APOD } from "../../APOD/apod";
 
 const LandingPage: React.FC = () => {
   useEffect(() => {
@@ -23,7 +24,7 @@ const LandingPage: React.FC = () => {
             </div>
           </ColumnSection>
           <ColumnSection className="section-2">
-            <div className="test">hi2</div>
+            <APOD />
           </ColumnSection>
           <ColumnSection className="section-3">
             <div className="funfact">

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./styles.scss";
 import PhotoViewer from "../../PhotoViewer/PhotoViewer";
+import { APOD } from "../../APOD/apod";
 
 const MarsRoverPage: React.FC = () => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const MarsRoverPage: React.FC = () => {
   return (
     <div className="gutter">
       <div className="mars-rover-page layout">
-        <PhotoViewer />
+        <APOD />
       </div>
     </div>
   );
