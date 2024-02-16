@@ -9,6 +9,8 @@ import image9 from "../../assests/MOXIE.jpg";
 import image10 from "../../assests/Curiosity.jpg";
 import image11 from "../../assests/Ingenuity1.jpg";
 import image12 from "../../assests/Comparing_the_atmospheres_of_Mars_and_Earth_pillars.jpg";
+import image13 from "../../assests/MetricError.jpg";
+import image14 from "../../assests/Mariner4.jpg";
 
 export interface Fact {
   title: string;
@@ -21,7 +23,7 @@ export interface Fact {
 
 export const factList: Fact[] = [
   {
-    title: "The red planet",
+    title: "The Red planet",
     image: image1,
     id: 1,
     content:
@@ -63,7 +65,7 @@ export const factList: Fact[] = [
     id: 7,
     content:
       "Mars atmosphere is 100 times thinner than earth's. It is believed that Mars once had a  thicker but several factors contributed to its deterioration. The low gravity makesit easy for upper layers of the atmosphere to be boiled away into the vacuum of space.Add to that lack of magnetic field, which would have been lost when the planet cooled down about 4 billion years ago means powerful solar wind stripped particles away from its atmosphere.   ",
-    category: "mission",
+    category: "environment",
   },
 
   {
@@ -75,11 +77,11 @@ export const factList: Fact[] = [
     category: "mission",
   },
   {
-    title: "First mission to Mars",
+    title: "First mission to land Mars",
     image: image3,
     id: 3,
     content:
-      "The first successful mission to Mars was NASA's Viking 1 mission in 1976.",
+      "The first successful mission to land on Mars was NASA's Viking 1 mission in 1976.",
     category: "mission",
   },
   {
@@ -119,6 +121,23 @@ export const factList: Fact[] = [
     id: 12,
     content:
       "The Martian atmosphere is mostly carbon dioxide (CO2) . Today, Mars is a cold, inhospitable desert but features like dry riverbeds and minerals that only form with liquid water indicate that long ago it had a thick atmosphere that retained enough heat for liquid water.",
+    category: "environment",
+  },
+  {
+    title: "Units error costs $125 million",
+    image: image13,
+    id: 13,
+    content:
+      "In setember 1999 The Mars Climate Orbiter burned and broke because someone used  feet and inches in the calculations instead of the metric system used at NASA, milimiters and meters.",
+    category: "mission",
+  },
+
+  {
+    title: "Previous approaches to Mars",
+    image: image14,
+    id: 14,
+    content:
+      "Mariner 4 was the first successful flyby of Mars on 15 July 1965. As you can guess there were some failures before this success. Mariner 3  was designed to fly by Mars but to launch properly,Mariner 1 and 2, however succesfully flew by Venus.  ",
     category: "mission",
   },
 ];

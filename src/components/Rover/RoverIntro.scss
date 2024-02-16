@@ -1,0 +1,10 @@
+@import "../commonStyles/constants.scss";
+
+.IntroContainer {
+  width: $desktopMinWidth;
+  @include padding;
+}
+
+img {
+  width: 80%;
+}

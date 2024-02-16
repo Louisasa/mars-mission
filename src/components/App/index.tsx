@@ -6,6 +6,7 @@ import MarsRoverPage from "../Layouts/MarsRoverPage";
 import WomenInSpace from "../Layouts/WomenInSpace";
 import NavBar from "../NavBar";
 import QuizPage from "../Layouts/QuizPage";
+import RoverIntroPage from "../Rover/RoverIntro";
 
 import FunFactPage from "../Layouts/FunFactPage";
 import FunFactRoverPage from "../Layouts/FunFactRoverPage";
@@ -27,6 +28,7 @@ const App: React.FC = () => {
         <Route path="/funfact/rover" element={<FunFactRoverPage />} />
         <Route path="/funfact/mission" element={<FunFactMissionPage />} />
         <Route path="/funfact/environment" element={<FunFactEnvPage />} />
+        <Route path="/roverintro" element={<RoverIntroPage />} />
       </Routes>
     </Router>
   );
