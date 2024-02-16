@@ -1,4 +1,7 @@
 export default {
+  globals: {
+    fetch: global.fetch,
+  },
   transform: {
     ".(ts|tsx)": "ts-jest",
   },

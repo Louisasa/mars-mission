@@ -1,0 +1,110 @@
+@import "../commonStyles/constants.scss";
+
+.apod {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.image_wrapper img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+
+.apod-overlay {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-container {
+  @include padding;
+  @include margin;
+  top: 0;
+  font-family: cursive;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  @include text("title");
+  padding-right: 50px;
+}
+
+.explanation {
+  @include text("paragraph");
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  bottom: 0;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+  backdrop-filter: blur(8px) brightness(80%);
+  z-index: 2;
+  @include desktop {
+    font-size: 15px;
+  }
+}
+
+.image_wrapper:hover .explanation,
+.image_wrapper:active .explanation {
+  transform: scale(1);
+}
+
+.explanation .text-container {
+  @include margin(3);
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #c4d46f;
+  border-top: 10px solid #383636;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.radioButtons {
+  display: flex;
+  flex-direction: row;
+  color: #ffffff;
+  top: 10px;
+  right: 20px;
+}
+.like {
+  color: #ff0063;
+}
+.dislike {
+  color: #d4482a;
+}
+.active {
+  font-weight: 1000;
+}
+
+@media only screen and (max-width: 550px) {
+  .explanation {
+    font-size: 10px;
+    @include padding(1);
+  }
+}
