@@ -40,6 +40,15 @@ const NavBar = () => {
                 Quiz
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className="nav-link"
+                to="/funfact"
+                onClick={closeMenuOnMobile}
+              >
+                Fun Facts
+              </Link>
+            </li>
           </ul>
           <div
             className={`hamburger ${showMenu ? "active" : ""}`}

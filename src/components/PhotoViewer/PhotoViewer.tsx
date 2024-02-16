@@ -93,25 +93,29 @@ const PhotoViewer: React.FC = () => {
 
   return (
     <div className="mainContainer">
-      <h1>Explore images captured by NASA's rovers on Mars</h1>
-      <p>
+      <h1 className="rover-heading">
+        Explore images captured by NASA's rovers on Mars
+      </h1>
+      <p className="rover-paragraph">
         You can customise your search by selecting one of the three Mars rovers
         and an Earth date
       </p>
-      <p>
+      <p className="rover-paragraph">
         We've started you off by selecting images from the Spirit rover on its
         100th day in space
       </p>
-      <h2>Please select your rover</h2>
+      <h2 className="rover-subheading">Please select your rover</h2>
       <div className="buttonContainer">
         <Button onClick={() => handleClick("curiosity")} name="Curiosity" />
         <Button onClick={() => handleClick("spirit")} name="Spirit" />
         <Button onClick={() => handleClick("opportunity")} name="Opportunity" />
       </div>
       {firstRender === false && (
-        <p>You've selected {roverNameCapitals} rover</p>
+        <p className="rover-paragraph">
+          You've selected {roverNameCapitals} rover
+        </p>
       )}
-      <h2>Please select a date</h2>
+      <h2 className="rover-subheading">Please select a date</h2>
       {firstRender === false && <MissionDate name={selectedRover} />}
       <div className="datePicker">
         <DatePicker
@@ -131,7 +135,7 @@ const PhotoViewer: React.FC = () => {
             <img src={coverImageUrl} alt="mars rover" className="coverImage" />
           </div>
           {date && camera && (
-            <p>
+            <p className="rover-paragraph">
               This image was captured on {imageDate} with a {camera}
             </p>
           )}
@@ -156,7 +160,9 @@ const PhotoViewer: React.FC = () => {
       )}
       {roverData.photos.length === 0 && (
         <div>
-          <p>No images match this search, please try a different date</p>
+          <p className="rover-paragraph">
+            No images match this search, please try a different date
+          </p>
         </div>
       )}
     </div>
