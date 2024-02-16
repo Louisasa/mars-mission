@@ -22,11 +22,12 @@
 .coverImageContainer {
   display: flex;
   justify-content: center;
+  padding-top: 15px;
 }
 .coverImage {
   width: auto;
   height: 75vh;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .thumbnails {
@@ -46,6 +47,10 @@
   @include margin(2);
 }
 
+.datePicker {
+  padding: 5px 5px 25px 5px;
+}
+
 .border {
-  border: 6px solid grey;
+  border: 6px solid #d21312;
 }
