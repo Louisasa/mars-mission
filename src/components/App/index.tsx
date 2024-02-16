@@ -3,6 +3,7 @@ import "./styles.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import LandingPage from "../Layouts/LandingPage";
 import MarsRoverPage from "../Layouts/MarsRoverPage";
+import WomenInSpace from "../Layouts/WomenInSpace";
 import NavBar from "../NavBar";
 import QuizPage from "../Layouts/QuizPage";
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/quiz" element={<QuizPage />} />
         <Route path="/marsrover" element={<MarsRoverPage />} />
+        <Route path="/womeninspace" element={<WomenInSpace />} />
         <Route path="/funfact" element={<FunFactPage />} />
         <Route path="/funfact/rover" element={<FunFactRoverPage />} />
         <Route path="/funfact/mission" element={<FunFactMissionPage />} />

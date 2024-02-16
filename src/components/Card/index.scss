@@ -1,0 +1,59 @@
+@import "../commonStyles/constants.scss";
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 640px;
+}
+
+.img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.text-container {
+  text-align: center;
+}
+
+.name-container {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.description-container {
+  line-height: 1.6;
+  margin: 0px 30%;
+  padding-bottom: 10px;
+}
+
+.further-details {
+  color: whitesmoke;
+}
+
+.further-details:hover {
+  text-decoration: none;
+}
+
+@include tablet {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img {
+    margin: 0 0 20px 0;
+  }
+
+  .h1 {
+    font-size: 80%;
+  }
+}

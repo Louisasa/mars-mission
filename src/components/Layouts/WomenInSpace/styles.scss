@@ -1,0 +1,15 @@
+@import "../../commonStyles/constants.scss";
+
+.woman-in-space {
+  line-height: 1.6;
+  margin: 20px;
+  background-color: #333;
+  color: whitesmoke;
+}
+
+.title {
+  text-align: center;
+  color: whitesmoke;
+  margin: 30px 0px;
+  @include text(title);
+}
