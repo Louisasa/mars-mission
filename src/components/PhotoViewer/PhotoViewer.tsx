@@ -7,6 +7,9 @@ import "react-datepicker/dist/react-datepicker.css";
 
 interface Photo {
   id: number;
+  camera: {
+    full_name: string;
+  };
   img_src: string;
   earth_date: string;
 }
@@ -14,6 +17,29 @@ interface Photo {
 interface RoverData {
   photos: Photo[];
 }
+
+interface MissionDateProps {
+  name: string;
+}
+
+const MissionDate: React.FC<MissionDateProps> = ({ name }) => {
+  let missionDuration: string = "";
+
+  switch (name) {
+    case "curiosity":
+      missionDuration = "6 August 2012 - present";
+      break;
+    case "opportunity":
+      missionDuration = "24 January 2004 - 10 June 2018";
+      break;
+    case "spirit":
+      missionDuration = "3 January 2004 - 25 May 2011";
+      break;
+  }
+
+  return <p>Available date range: {missionDuration}</p>;
+};
+
 const PhotoViewer: React.FC = () => {
   const [roverData, setRoverData] = useState<RoverData>();
   const [selectedRover, setSelectedRover] = useState<string>("spirit");
@@ -21,6 +47,8 @@ const PhotoViewer: React.FC = () => {
   const [date, setDate] = useState<Date | null>(new Date());
   const [dateParam, setDateParam] = useState<string>("sol=100");
   const [imageDate, setImageDate] = useState<string>();
+  const [camera, setCamera] = useState<string>();
+  const [firstRender, setFirstRender] = useState<boolean>(true);
 
   const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&${dateParam}`;
 
@@ -42,11 +70,13 @@ const PhotoViewer: React.FC = () => {
 
   const handleClick = (roverName: string) => {
     setSelectedRover(roverName);
+    setFirstRender(false);
   };
 
-  const handleImageClick = (url: string, date: string) => {
+  const handleImageClick = (url: string, date: string, camera: string) => {
     setCoverImageUrl(url);
     setImageDate(date);
+    setCamera(camera);
   };
 
   const handleDateSubmit = () => {
@@ -63,37 +93,61 @@ const PhotoViewer: React.FC = () => {
 
   return (
     <div className="mainContainer">
-      <h1 className="rover-heading">Mars Rover Photo Viewer</h1>
+      <h1 className="rover-heading">
+        Explore images captured by NASA's rovers on Mars
+      </h1>
+      <p className="rover-paragraph">
+        You can customise your search by selecting one of the three Mars rovers
+        and an Earth date
+      </p>
+      <p className="rover-paragraph">
+        We've started you off by selecting images from the Spirit rover on its
+        100th day in space
+      </p>
       <h2 className="rover-subheading">Please select your rover</h2>
       <div className="buttonContainer">
         <Button onClick={() => handleClick("curiosity")} name="Curiosity" />
         <Button onClick={() => handleClick("spirit")} name="Spirit" />
         <Button onClick={() => handleClick("opportunity")} name="Opportunity" />
       </div>
-      <p className="rover-paragraph">
-        You've selected {roverNameCapitals} rover
-      </p>
+      {firstRender === false && (
+        <p className="rover-paragraph">
+          You've selected {roverNameCapitals} rover
+        </p>
+      )}
       <h2 className="rover-subheading">Please select a date</h2>
-      <DatePicker
-        minDate={new Date("January 4, 2004")}
-        selected={date}
-        onChange={(date) => setDate(date)}
-        dateFormat="dd-MM-yyyy"
-      />
+      {firstRender === false && <MissionDate name={selectedRover} />}
+      <div className="datePicker">
+        <DatePicker
+          minDate={new Date("January 4, 2004")}
+          selected={date}
+          onChange={(date) => setDate(date)}
+          dateFormat="dd-MM-yyyy"
+        />
+      </div>
+
       <div className="buttonContainer">
-        <button onClick={() => handleDateSubmit()}>Submit</button>
+        <button onClick={() => handleDateSubmit()}>Search</button>
       </div>
       {roverData.photos.length > 0 && (
         <>
           <div className="coverImageContainer">
             <img src={coverImageUrl} alt="mars rover" className="coverImage" />
           </div>
-          {imageDate && <p>This image was captured on {imageDate}</p>}
+          {date && camera && (
+            <p className="rover-paragraph">
+              This image was captured on {imageDate} with a {camera}
+            </p>
+          )}
           <div className="thumbnails">
             {roverData.photos.slice(0, 23).map((photo: Photo) => (
               <img
                 onClick={() =>
-                  handleImageClick(photo.img_src, photo.earth_date)
+                  handleImageClick(
+                    photo.img_src,
+                    photo.earth_date,
+                    photo.camera.full_name,
+                  )
                 }
                 key={photo.id}
                 src={photo.img_src}
