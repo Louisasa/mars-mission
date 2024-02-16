@@ -15,19 +15,21 @@ import FunFactEnvPage from "../Layouts/FunFactEnvPage";
 const App: React.FC = () => {
   return (
     <Router>
-      <header>
-        <NavBar />
-      </header>
+      <NavBar />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/quiz" element={<QuizPage />} />
-        <Route path="/marsrover" element={<MarsRoverPage />} />
-        <Route path="/womeninspace" element={<WomenInSpace />} />
-        <Route path="/funfact" element={<FunFactPage />} />
-        <Route path="/funfact/rover" element={<FunFactRoverPage />} />
-        <Route path="/funfact/mission" element={<FunFactMissionPage />} />
-        <Route path="/funfact/environment" element={<FunFactEnvPage />} />
       </Routes>
+      <div className="padded-container">
+        <Routes>
+          <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/marsrover" element={<MarsRoverPage />} />
+          <Route path="/womeninspace" element={<WomenInSpace />} />
+          <Route path="/funfact" element={<FunFactPage />} />
+          <Route path="/funfact/rover" element={<FunFactRoverPage />} />
+          <Route path="/funfact/mission" element={<FunFactMissionPage />} />
+          <Route path="/funfact/environment" element={<FunFactEnvPage />} />
+        </Routes>
+      </div>
     </Router>
   );
 };

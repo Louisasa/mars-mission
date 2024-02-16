@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./styles.scss";
 
 const NavBar = () => {
+  const location = useLocation();
+
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -16,10 +18,9 @@ const NavBar = () => {
   return (
     <>
       <header className="header">
-        <nav className="navbar">
-          <Link className="nav-logo" to="/">
-            Mars-Mission
-          </Link>
+        <nav
+          className={`navbar ${location.pathname === "/" ? "collapsed" : ""}`}
+        >
           <ul className={`nav-menu ${showMenu ? "active" : ""}`}>
             <li className="nav-item">
               <Link className="nav-link" to="/" onClick={closeMenuOnMobile}>

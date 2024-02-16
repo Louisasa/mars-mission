@@ -1,12 +1,7 @@
 import React, { useEffect } from "react";
-import "./styles.scss";
 import ThreeColumnSection from "../ThreeColumnSection";
 import ColumnSection from "../ThreeColumnSection/columnSection";
-import FunFactCategory from "../../FunFacts/FunFactCategory";
-import { factList } from "../../FunFacts/factList";
-import { Link } from "react-router-dom";
-import Quiz from "../../Quiz";
-import { APOD } from "../../APOD/apod";
+import "./styles.scss";
 
 const LandingPage: React.FC = () => {
   useEffect(() => {
@@ -14,31 +9,30 @@ const LandingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="gutter">
-      <div className="landing-page layout">
-        <ThreeColumnSection>
-          <ColumnSection className="section-1">
-            <h1 className="quiz-heading">Quiz your knowledge!</h1>
-            <div className="quiz">
-              <Quiz />
-            </div>
-          </ColumnSection>
-          <ColumnSection className="section-2">
-            <APOD />
-          </ColumnSection>
-          <ColumnSection className="section-3">
-            <div className="funfact">
-              <FunFactCategory
-                facts={[factList[Math.floor(Math.random() * 12)]]}
-              />
-              <Link to="/funfact" className="link">
-                Go to Fun Fact Page!
-              </Link>
-            </div>
-          </ColumnSection>
-        </ThreeColumnSection>
-      </div>
-    </div>
+    <ThreeColumnSection>
+      <ColumnSection link="/quiz" className="column-section column-section-1">
+        <p className="column-section-icon" role="presentation">
+          ?
+        </p>
+        <h2 className="column-heading">Quiz</h2>
+      </ColumnSection>
+      <ColumnSection link="/apod" className="column-section column-section-2">
+        <h2 className="column-heading">
+          Astronomy
+          <br />
+          Picture of the Day
+        </h2>
+      </ColumnSection>
+      <ColumnSection
+        link="/funfact"
+        className="column-section column-section-3"
+      >
+        <p className="column-section-icon" role="presentation">
+          !
+        </p>
+        <h2 className="column-heading">Fun Facts</h2>
+      </ColumnSection>
+    </ThreeColumnSection>
   );
 };
 

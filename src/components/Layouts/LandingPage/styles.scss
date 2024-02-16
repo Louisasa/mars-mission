@@ -1,30 +1,40 @@
 @import "../../commonStyles/constants.scss";
 
-.landing-page {
-  .quiz-heading {
-    @include text(title);
-    @include padding(1);
-    display: flex;
-    justify-content: center;
-  }
+.column-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: filter 0.25s;
+  text-shadow: 0 0 10px black;
+  @include padding(5);
+}
 
-  .quiz {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    @include padding(3);
+.column-section:hover {
+  filter: brightness(1.5);
+}
 
-    @include desktop {
-      @include padding(1);
-    }
+.column-section-2 {
+  justify-content: start;
+  align-items: start;
+  text-align: left;
+}
+
+.column-section-icon {
+  @include margin(0);
+  font-size: 72px;
+  opacity: 0.5;
+  color: white;
+
+  @include desktop {
+    font-size: 200px;
   }
 }
 
-.funfact {
-  @include padding(1);
-}
-
-.link {
-  @include text("subheading");
+.column-heading {
+  @include text(title);
+  @include text-stylised();
+  @include margin(0);
+  line-height: 1.15;
 }
