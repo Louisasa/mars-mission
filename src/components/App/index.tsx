@@ -6,6 +6,7 @@ import MarsRoverPage from "../Layouts/MarsRoverPage";
 import WomenInSpace from "../Layouts/WomenInSpace";
 import NavBar from "../NavBar";
 import QuizPage from "../Layouts/QuizPage";
+import { APOD } from "../APOD/apod";
 
 import FunFactPage from "../Layouts/FunFactPage";
 import FunFactRoverPage from "../Layouts/FunFactRoverPage";
@@ -22,6 +23,7 @@ const App: React.FC = () => {
       <div className="padded-container">
         <Routes>
           <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/apod" element={<APOD />} />
           <Route path="/marsrover" element={<MarsRoverPage />} />
           <Route path="/womeninspace" element={<WomenInSpace />} />
           <Route path="/funfact" element={<FunFactPage />} />
