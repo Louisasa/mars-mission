@@ -11,6 +11,9 @@ dependencies:
   "@emotion/styled":
     specifier: ^11.11.0
     version: 11.11.0(@emotion/react@11.11.3)(@types/react@18.2.55)(react@18.2.0)
+  "@fontsource/titillium-web":
+    specifier: ^5.0.18
+    version: 5.0.18
   "@mui/icons-material":
     specifier: ^5.15.10
     version: 5.15.10(@mui/material@5.15.10)(@types/react@18.2.55)(react@18.2.0)
@@ -84,7 +87,7 @@ devDependencies:
     version: 7.23.3(@babel/core@7.23.9)
   "@types/react-datepicker":
     specifier: ^6.0.0
-    version: 6.0.0(react-dom@18.2.0)(react@18.2.0)
+    version: 6.0.1(react-dom@18.2.0)(react@18.2.0)
   husky:
     specifier: ^9.0.10
     version: 9.0.10
@@ -2431,6 +2434,13 @@ packages:
         integrity: sha512-9TANp6GPoMtYzQdt54kfAyMmz1+osLlXdg2ENroU7zzrtflTLrrC/lgrIfaSe+Wu0b89GKccT7vxXA0MoAIO+Q==,
       }
 
+  /@fontsource/titillium-web@5.0.18:
+    resolution:
+      {
+        integrity: sha512-GBmp0vqS0iGvUaA1tLtxFRXzeeQ+on0mrRDr0iLUo3B1YzR41ljB5zHO5U/VBByGVzq7CATtCbXov3G2mWCPbQ==,
+      }
+    dev: false
+
   /@humanwhocodes/config-array@0.11.14:
     resolution:
       {
@@ -4128,10 +4138,10 @@ packages:
       }
     dev: false
 
-  /@types/react-datepicker@6.0.0(react-dom@18.2.0)(react@18.2.0):
+  /@types/react-datepicker@6.0.1(react-dom@18.2.0)(react@18.2.0):
     resolution:
       {
-        integrity: sha512-/1WP7jUVqVEsRdY/HbeOOcCgqR9kj8Ha/nBawGpVC3X2/jWW8hhKTUzHhnUDmhzg5bfQBfJ91PxOY6iFMSNlyA==,
+        integrity: sha512-oAavACLXz+Vm6kO1XZe1/LQJClOO32UUv4xva9G16KQJ2hNROtXyeGzmRg6mktHrQ+YGLnnNlN6S/XykQE2HMA==,
       }
     dependencies:
       "@floating-ui/react": 0.26.9(react-dom@18.2.0)(react@18.2.0)

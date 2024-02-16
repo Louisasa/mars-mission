@@ -12,11 +12,13 @@ $fontBold: 600;
   display: flex;
   flex-wrap: wrap;
   @include margin;
+  position: relative;
 
   .fact-container {
     background-color: #151820;
-    @include text("paragraph");
+    @include text("subheading");
     @include padding;
+    width: 100%;
 
     img {
       width: 100%;

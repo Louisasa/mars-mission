@@ -3,12 +3,15 @@ import React from "react";
 interface ButtonProps {
   onClick: () => void;
   name: string;
+  disabled?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ onClick, name }) => {
+const Button: React.FC<ButtonProps> = ({ onClick, name, disabled }) => {
   return (
     <div>
-      <button onClick={onClick}>{name}</button>
+      <button onClick={onClick} disabled={disabled}>
+        {name}
+      </button>
     </div>
   );
 };
