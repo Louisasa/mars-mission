@@ -1,3 +1,5 @@
+@import "../commonStyles/constants.scss";
+
 .card-container {
   display: flex;
   justify-content: center;
@@ -41,7 +43,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 768px) {
+@include tablet {
   .card-container {
     flex-direction: column;
     align-items: center;

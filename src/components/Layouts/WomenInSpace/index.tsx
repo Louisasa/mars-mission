@@ -73,8 +73,8 @@ const WomenInSpace: React.FC = () => {
   }
 
   return (
-    <div>
-      <h1> Women In Space </h1>
+    <div className="woman-in-space">
+      <h1 className="title"> Women In Space </h1>
       <div className="women-space-page layout">
         <Card card={womenInSpace[cardsToShow]} />
         <Card card={womenInSpace[cardsToShow + 1]} />
