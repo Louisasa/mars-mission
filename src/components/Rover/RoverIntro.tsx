@@ -31,7 +31,7 @@ export default function RoverIntro() {
       <h2>
         {" "}
         Starting with fly by mission, then orbiting spacecraft. Currently NASA
-        has two active Rovers in Mars.{" "}
+        has two active Rovers in Mar: Curiosity and Perseverance.{" "}
       </h2>
       <div className="IntroContainer">
         <div className="MarsImagesScroll">
@@ -61,6 +61,3 @@ export default function RoverIntro() {
     )
 }
 */
-
-//ive operated by the United States and one operated by China.
-//The names of the five rovers of the United States are Sojourner July 4, 1997, SpiritJanuary 4, 2004 and Opportunity January 25, 2004, Curiosity August 6, 2012, Perseverance February 18, 2021.
