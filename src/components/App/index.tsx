@@ -28,7 +28,7 @@ const App: React.FC = () => {
         <Route path="/funfact/rover" element={<FunFactRoverPage />} />
         <Route path="/funfact/mission" element={<FunFactMissionPage />} />
         <Route path="/funfact/environment" element={<FunFactEnvPage />} />
-        <Route path="/rover" element={<RoverIntroPage />} />
+        <Route path="/roverintro" element={<RoverIntroPage />} />
       </Routes>
     </Router>
   );

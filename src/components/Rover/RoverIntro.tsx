@@ -22,16 +22,20 @@ export default function RoverIntro() {
 
   return (
     <div className="gutter">
-      <h1>Mars Rovers</h1>
-      <h2> We have been working towards going to mars since the 1960s.</h2>
-      <h2>
-        {" "}
-        Starting with fly by mission, then orbiting spacecraft. Currently NASA
-        has two active Rovers in Mar: Curiosity and Perseverance.{" "}
-      </h2>
-      <div className="IntroContainer">
-        <div className="MarsImagesScroll">
-          <img src={imagePath} alt={`Mars${selectedImage + 1}`} />
+      <div className="layout">
+        <h1 className="intro-heading">Mars Rovers</h1>
+        <h2 className="intro-paragraph">
+          {" "}
+          We have been working towards going to mars since the 1960s.
+        </h2>
+        <h2 className="intro-paragraph">
+          Starting with fly by mission, then orbiting spacecraft. Currently NASA
+          has two active Rovers in Mar: Curiosity and Perseverance.{" "}
+        </h2>
+        <div className="IntroContainer">
+          <div className="MarsImagesScroll">
+            <img src={imagePath} alt={`Mars${selectedImage + 1}`} />
+          </div>
         </div>
       </div>
     </div>
