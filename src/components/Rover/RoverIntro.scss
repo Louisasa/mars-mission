@@ -1,11 +1,10 @@
 @import "../commonStyles/constants.scss";
 
 .IntroContainer {
-  width: 13%;
+  width: $desktopMinWidth;
+  @include padding;
 }
-.MarsImagesScroll {
-  width: 15%;
-  height: 15%;
-  margin-left: 100px;
-  margin-right: 100px;
+
+img {
+  width: 80%;
 }

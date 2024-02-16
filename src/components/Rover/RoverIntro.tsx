@@ -1,6 +1,3 @@
-import imgCuriosity from "../../assests/Curiosity.jpg";
-import imgPerseverance from "../../assests/PerseveranceParts.jpg";
-import imgLandingsMap from "../../assests/LandingSites.jpg";
 import { useEffect, useState } from "react";
 import "./RoverIntro.scss";
 
@@ -21,11 +18,10 @@ export default function RoverIntro() {
     return () => clearInterval(intervalId);
   }, []);
 
-  // Generate the path based on the selectedImage index
   const imagePath = `${process.env.PUBLIC_URL}/Scrollimages/Mars${selectedImage + 1}.png`;
 
   return (
-    <div>
+    <div className="gutter">
       <h1>Mars Rovers</h1>
       <h2> We have been working towards going to mars since the 1960s.</h2>
       <h2>
@@ -41,23 +37,3 @@ export default function RoverIntro() {
     </div>
   );
 }
-
-/*      
-    return (
-        <div>
-            <h1>Active Mars Rover</h1>
-            <h2> There are currently two active Rovers in Mars operated by NASA:</h2>
-
-            <div className="RoverIntroContainer">
-                <img src={imgCuriosity} alt="Curiosity Rover" />
-                <img src={imgPerseverance} alt="Perseverance Rover" />
-            </div>
-
-            <p> There have three previous landings on mars from NASA rovers</p>
-            <div  className="LandingMap">
-                <img src={imgLandingsMap} alt ="Landing Sites Map"/>
-            </div>
-        </div>
-    )
-}
-*/
