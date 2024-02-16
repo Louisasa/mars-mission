@@ -63,15 +63,17 @@ const PhotoViewer: React.FC = () => {
 
   return (
     <div className="mainContainer">
-      <h1>Mars Rover Photo Viewer</h1>
-      <h2>Please select your rover</h2>
+      <h1 className="rover-heading">Mars Rover Photo Viewer</h1>
+      <h2 className="rover-subheading">Please select your rover</h2>
       <div className="buttonContainer">
         <Button onClick={() => handleClick("curiosity")} name="Curiosity" />
         <Button onClick={() => handleClick("spirit")} name="Spirit" />
         <Button onClick={() => handleClick("opportunity")} name="Opportunity" />
       </div>
-      <p>You've selected {roverNameCapitals} rover</p>
-      <h2>Please select a date</h2>
+      <p className="rover-paragraph">
+        You've selected {roverNameCapitals} rover
+      </p>
+      <h2 className="rover-subheading">Please select a date</h2>
       <DatePicker
         minDate={new Date("January 4, 2004")}
         selected={date}
@@ -104,7 +106,9 @@ const PhotoViewer: React.FC = () => {
       )}
       {roverData.photos.length === 0 && (
         <div>
-          <p>No images match this search, please try a different date</p>
+          <p className="rover-paragraph">
+            No images match this search, please try a different date
+          </p>
         </div>
       )}
     </div>

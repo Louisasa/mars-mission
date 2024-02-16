@@ -3,10 +3,12 @@ import FunFactCategory from "../../FunFacts/FunFactCategory";
 
 export default function FunFactMissionPage() {
   return (
-    <div>
-      <FunFactCategory
-        facts={factList.filter((cate: any) => cate.category === "mission")}
-      />
+    <div className="gutter">
+      <div className="mission-fun-fact-page layout">
+        <FunFactCategory
+          facts={factList.filter((cate: any) => cate.category === "mission")}
+        />
+      </div>
     </div>
   );
 }
