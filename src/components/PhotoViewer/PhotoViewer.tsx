@@ -7,6 +7,9 @@ import "react-datepicker/dist/react-datepicker.css";
 
 interface Photo {
   id: number;
+  camera: {
+    full_name: string;
+  };
   img_src: string;
   earth_date: string;
 }
@@ -44,6 +47,8 @@ const PhotoViewer: React.FC = () => {
   const [date, setDate] = useState<Date | null>(new Date());
   const [dateParam, setDateParam] = useState<string>("sol=100");
   const [imageDate, setImageDate] = useState<string>();
+  const [camera, setCamera] = useState<string>();
+  const [firstRender, setFirstRender] = useState<boolean>(true);
 
   const URL = `https://api.nasa.gov/mars-photos/api/v1/rovers/${selectedRover}/photos?api_key=${process.env.REACT_APP_API_KEY}&${dateParam}`;
 
@@ -65,11 +70,13 @@ const PhotoViewer: React.FC = () => {
 
   const handleClick = (roverName: string) => {
     setSelectedRover(roverName);
+    setFirstRender(false);
   };
 
-  const handleImageClick = (url: string, date: string) => {
+  const handleImageClick = (url: string, date: string, camera: string) => {
     setCoverImageUrl(url);
     setImageDate(date);
+    setCamera(camera);
   };
 
   const handleDateSubmit = () => {
@@ -86,36 +93,57 @@ const PhotoViewer: React.FC = () => {
 
   return (
     <div className="mainContainer">
-      <h1>Mars Rover Photo Viewer</h1>
+      <h1>Explore images captured by NASA's rovers on Mars</h1>
+      <p>
+        You can customise your search by selecting one of the three Mars rovers
+        and an Earth date
+      </p>
+      <p>
+        We've started you off by selecting images from the Spirit rover on its
+        100th day in space
+      </p>
       <h2>Please select your rover</h2>
       <div className="buttonContainer">
         <Button onClick={() => handleClick("curiosity")} name="Curiosity" />
         <Button onClick={() => handleClick("spirit")} name="Spirit" />
         <Button onClick={() => handleClick("opportunity")} name="Opportunity" />
       </div>
-      <p>You've selected {roverNameCapitals} rover</p>
-      <MissionDate name={selectedRover} />
+      {firstRender === false && (
+        <p>You've selected {roverNameCapitals} rover</p>
+      )}
       <h2>Please select a date</h2>
-      <DatePicker
-        minDate={new Date("January 4, 2004")}
-        selected={date}
-        onChange={(date) => setDate(date)}
-        dateFormat="dd-MM-yyyy"
-      />
+      {firstRender === false && <MissionDate name={selectedRover} />}
+      <div className="datePicker">
+        <DatePicker
+          minDate={new Date("January 4, 2004")}
+          selected={date}
+          onChange={(date) => setDate(date)}
+          dateFormat="dd-MM-yyyy"
+        />
+      </div>
+
       <div className="buttonContainer">
-        <button onClick={() => handleDateSubmit()}>Submit</button>
+        <button onClick={() => handleDateSubmit()}>Search</button>
       </div>
       {roverData.photos.length > 0 && (
         <>
           <div className="coverImageContainer">
             <img src={coverImageUrl} alt="mars rover" className="coverImage" />
           </div>
-          {imageDate && <p>This image was captured on {imageDate}</p>}
+          {date && camera && (
+            <p>
+              This image was captured on {imageDate} with a {camera}
+            </p>
+          )}
           <div className="thumbnails">
             {roverData.photos.slice(0, 23).map((photo: Photo) => (
               <img
                 onClick={() =>
-                  handleImageClick(photo.img_src, photo.earth_date)
+                  handleImageClick(
+                    photo.img_src,
+                    photo.earth_date,
+                    photo.camera.full_name,
+                  )
                 }
                 key={photo.id}
                 src={photo.img_src}
