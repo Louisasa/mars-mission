@@ -14,6 +14,29 @@ interface Photo {
 interface RoverData {
   photos: Photo[];
 }
+
+interface MissionDateProps {
+  name: string;
+}
+
+const MissionDate: React.FC<MissionDateProps> = ({ name }) => {
+  let missionDuration: string = "";
+
+  switch (name) {
+    case "curiosity":
+      missionDuration = "6 August 2012 - present";
+      break;
+    case "opportunity":
+      missionDuration = "24 January 2004 - 10 June 2018";
+      break;
+    case "spirit":
+      missionDuration = "3 January 2004 - 25 May 2011";
+      break;
+  }
+
+  return <p>Available date range: {missionDuration}</p>;
+};
+
 const PhotoViewer: React.FC = () => {
   const [roverData, setRoverData] = useState<RoverData>();
   const [selectedRover, setSelectedRover] = useState<string>("spirit");
@@ -71,6 +94,7 @@ const PhotoViewer: React.FC = () => {
         <Button onClick={() => handleClick("opportunity")} name="Opportunity" />
       </div>
       <p>You've selected {roverNameCapitals} rover</p>
+      <MissionDate name={selectedRover} />
       <h2>Please select a date</h2>
       <DatePicker
         minDate={new Date("January 4, 2004")}
