@@ -1,3 +1,5 @@
+@import "@fontsource/titillium-web";
+
 $desktopMinWidth: 992px;
 $tabletMinWidth: 600px;
 
@@ -21,6 +23,10 @@ $tabletMinWidth: 600px;
     ),
     $textSize
   );
+}
+
+@mixin text-stylised() {
+  font-family: "Titillium Web", sans-serif;
 }
 
 @mixin tablet {
@@ -50,8 +56,4 @@ $tabletMinWidth: 600px;
 
 .layout {
   position: relative;
-}
-
-body {
-  background-color: rgb(43, 51, 75);
 }

@@ -4,11 +4,8 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  // background-image: url("../../../assets/backgroundimage1.jpeg");
-  background-repeat: no-repeat;
-  background-size: cover;
   position: relative;
-  gap: 50px;
+  height: 100%;
 
   @include desktop {
     flex-direction: row;
@@ -19,31 +16,24 @@
 .column-section {
   background-repeat: no-repeat;
   background-size: cover;
-
-  @include desktop {
-    width: 30%;
-  }
+  text-decoration: none;
 }
 
-.section-1 {
-  background-image: url("../../../assets/backgroundimage2.jpeg");
-  order: 2;
-
-  @include desktop {
-    order: 1;
-  }
+.column-section-1 {
+  background-image: url("../../../assets/spiral-galaxy.jpg");
+  background-position: left;
+  flex: 0 0 27.5%;
 }
 
-.section-2 {
-  background-image: url("../../../assets/backgroundimage2.jpeg");
-  order: 1;
-
-  @include desktop {
-    order: 2;
-  }
+.column-section-2 {
+  background-image: url("../../../assets/mars-rover.webp");
+  background-position: right;
+  flex: 0 0 40%;
 }
 
-.section-3 {
-  background-image: url("../../../assets/backgroundimage2.jpeg");
+.column-section-3 {
+  background-image: url("../../../assets/galaxy.jpg");
+  background-position: left;
   order: 3;
+  flex: 0 0 27.5%;
 }
