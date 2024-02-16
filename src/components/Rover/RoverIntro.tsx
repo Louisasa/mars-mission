@@ -23,12 +23,11 @@ export default function RoverIntro() {
   return (
     <div className="gutter">
       <div className="layout">
-        <h1 className="intro-heading">Mars Rovers</h1>
-        <h2 className="intro-paragraph">
-          {" "}
+        <h1 className="rover-heading">Mars Rovers</h1>
+        <h2 className="rover-paragraph">
           We have been working towards going to mars since the 1960s.
         </h2>
-        <h2 className="intro-paragraph">
+        <h2 className="rover-paragraph">
           Starting with fly by mission, then orbiting spacecraft. Currently NASA
           has two active Rovers in Mar: Curiosity and Perseverance.{" "}
         </h2>
