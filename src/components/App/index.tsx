@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Quiz } from "../Quiz/index"; // File location finds the file "index" automatically
 import LandingPage from "../Layouts/LandingPage";
 import MarsRoverPage from "../Layouts/MarsRoverPage";
+import WomenInSpace from "../Layouts/WomenInSpace";
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
         <Route path="/quiz" element={<Quiz />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/marsrover" element={<MarsRoverPage />} />
+        <Route path="/womeninspace" element={<WomenInSpace />} />
       </Routes>
     </Router>
   );
